@@ -11,23 +11,24 @@ import UIKit
 class EventViewController: UIViewController {
 
     @IBOutlet weak var venueImageView: UIImageView!
-    @IBOutlet weak var countDownLabel: UILabel!
+    @IBOutlet weak var secondsLabel: UILabel!
+    @IBOutlet weak var minutesLabel: UILabel!
+    @IBOutlet weak var hoursLabel: UILabel!
+    
     var foursquare : NSDictionary!
     var photos : NSDictionary!
     
     
     var timer = NSTimer()
-    var counter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        countDownLabel.text = String(counter)
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
+        
+        //Declare Timer
+        timer = NSTimer.scheduledTimerWithTimeInterval(0, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
 
-        // Do any additional setup after loading the view.
         
-        //foursquare venue header
-        
+        //foursquare venue header image
         var venueId = "4aff8b4af964a520663922e3"
         var accessToken = "YTC10HGRAPCWLVP3VEHK122X23KEO30SHSUJ1GIPD4IIZQEE&v=20150614"
         
@@ -44,7 +45,7 @@ class EventViewController: UIViewController {
             var suffix = items.valueForKeyPath("suffix") as! NSArray
             println("\(prefix[0])original\(suffix[0])")
             
-            var photoUrl = NSURL(string: "\(prefix[0])original\(suffix[0])")
+            var photoUrl = NSURL(string: "\(prefix[1])original\(suffix[1])")
             
             self.venueImageView.setImageWithURL(photoUrl)
             
@@ -61,7 +62,76 @@ class EventViewController: UIViewController {
     }
     
     func updateCounter(){
-    countDownLabel.text = String(counter++)
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond | .CalendarUnitMonth | .CalendarUnitYear | .CalendarUnitDay, fromDate: date)
+        
+        let hour = components.hour
+        let minutes = components.minute
+        let seconds = components.second
+        let month = components.month
+        let year = components.year
+        let day = components.day
+        
+        let currentDate = calendar.dateFromComponents(components)
+        
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        //target date
+        let userCalendar = NSCalendar.currentCalendar()
+        
+        
+        let competitionDate = NSDateComponents()
+        competitionDate.year = 2015
+        competitionDate.month = 6
+        competitionDate.day = 26
+        competitionDate.hour = 08
+        competitionDate.minute = 00
+        competitionDate.second = 00
+        let competitionDay = userCalendar.dateFromComponents(competitionDate)!
+        
+        //Compare dates
+        // Here we compare the two dates
+        competitionDay.timeIntervalSinceDate(currentDate!)
+        
+        let dayCalendarUnit: NSCalendarUnit = (.CalendarUnitDay | .CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond )
+        
+        //here we change the seconds to hours,minutes and days
+        let CompetitionDayDifference = userCalendar.components(
+            dayCalendarUnit, fromDate: currentDate!, toDate: competitionDay,
+            options: nil)
+        //finally, here we set the variable to our remaining time
+        var daysLeft = CompetitionDayDifference.day
+        var hoursLeft = CompetitionDayDifference.hour
+        var minutesLeft = CompetitionDayDifference.minute
+        var secondsLeft = CompetitionDayDifference.second
+        
+        //daysLabel.text = String(daysLeft)
+        if hoursLeft > 9
+        {
+        hoursLabel.text = String (hoursLeft)
+        }
+        else if hoursLeft < 10
+        {
+        hoursLabel.text = "0" + String(hoursLeft)
+        }
+        
+        if minutesLeft > 9
+        {
+        minutesLabel.text = String(minutesLeft)
+        }
+        else if minutesLeft < 10
+        {
+        minutesLabel.text = "0" + String(minutesLeft)
+        }
+        
+        if secondsLeft > 9 {
+        secondsLabel.text = String(secondsLeft)
+        }
+        else if secondsLeft < 10
+        {
+        secondsLabel.text = "0" + String(secondsLeft)
+        }
     
     }
     
