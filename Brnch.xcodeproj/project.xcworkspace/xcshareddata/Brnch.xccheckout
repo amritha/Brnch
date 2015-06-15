@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A56F45CB-8539-4119-BA76-6FC302BEA239</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Brnch</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FC66D30E66FE1454182A209AA1942EE06413B6ED</key>
+		<string>https://github.com/amritha/Brnch.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Brnch.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FC66D30E66FE1454182A209AA1942EE06413B6ED</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/amritha/Brnch.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FC66D30E66FE1454182A209AA1942EE06413B6ED</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FC66D30E66FE1454182A209AA1942EE06413B6ED</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Brnch</string>
+		</dict>
+	</array>
+</dict>
+</plist>

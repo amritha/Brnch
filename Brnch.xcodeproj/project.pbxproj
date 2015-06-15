@@ -12,6 +12,9 @@
 		5199C0B61B27F5D300BAA7F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5199C0B51B27F5D300BAA7F2 /* Images.xcassets */; };
 		5199C0B91B27F5D300BAA7F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5199C0B71B27F5D300BAA7F2 /* LaunchScreen.xib */; };
 		5199C0C51B27F5D300BAA7F2 /* BrnchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5199C0C41B27F5D300BAA7F2 /* BrnchTests.swift */; };
+		EFE3D15C1B2E7E1F006F3E71 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE3D15B1B2E7E1F006F3E71 /* AddLocationViewController.swift */; };
+		EFE3D15F1B2E8114006F3E71 /* AddLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE3D15E1B2E8114006F3E71 /* AddLocationTableViewCell.swift */; };
+		EFE3D1611B2E8411006F3E71 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE3D1601B2E8411006F3E71 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,9 @@
 		5199C0BE1B27F5D300BAA7F2 /* BrnchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrnchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5199C0C31B27F5D300BAA7F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5199C0C41B27F5D300BAA7F2 /* BrnchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrnchTests.swift; sourceTree = "<group>"; };
+		EFE3D15B1B2E7E1F006F3E71 /* AddLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
+		EFE3D15E1B2E8114006F3E71 /* AddLocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLocationTableViewCell.swift; sourceTree = "<group>"; };
+		EFE3D1601B2E8411006F3E71 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +81,11 @@
 		5199C0AB1B27F5D300BAA7F2 /* Brnch */ = {
 			isa = PBXGroup;
 			children = (
+				EFE3D15D1B2E80E5006F3E71 /* Table View Cells */,
+				EFE3D15A1B2E7E03006F3E71 /* View Controllers */,
 				5199C0AE1B27F5D300BAA7F2 /* AppDelegate.swift */,
 				5199C0B21B27F5D300BAA7F2 /* Main.storyboard */,
+				EFE3D1601B2E8411006F3E71 /* Common.swift */,
 				5199C0B51B27F5D300BAA7F2 /* Images.xcassets */,
 				5199C0B71B27F5D300BAA7F2 /* LaunchScreen.xib */,
 				5199C0AC1B27F5D300BAA7F2 /* Supporting Files */,
@@ -107,6 +116,22 @@
 				5199C0C31B27F5D300BAA7F2 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EFE3D15A1B2E7E03006F3E71 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EFE3D15B1B2E7E1F006F3E71 /* AddLocationViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EFE3D15D1B2E80E5006F3E71 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EFE3D15E1B2E8114006F3E71 /* AddLocationTableViewCell.swift */,
+			);
+			name = "Table View Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,7 +234,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFE3D1611B2E8411006F3E71 /* Common.swift in Sources */,
+				EFE3D15F1B2E8114006F3E71 /* AddLocationTableViewCell.swift in Sources */,
 				5199C0AF1B27F5D300BAA7F2 /* AppDelegate.swift in Sources */,
+				EFE3D15C1B2E7E1F006F3E71 /* AddLocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +433,7 @@
 				5199C0CA1B27F5D300BAA7F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5199C0CB1B27F5D300BAA7F2 /* Build configuration list for PBXNativeTarget "BrnchTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +442,7 @@
 				5199C0CD1B27F5D300BAA7F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
