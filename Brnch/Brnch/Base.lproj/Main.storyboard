@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" userLabel="Main View Controller" customClass="ViewController" customModule="Brnch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Obr-T4-iHf">
+                                <rect key="frame" x="93" y="266" width="134" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="492" y="399"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="wcz-18-8Ff">
+            <objects>
+                <viewController id="3a0-lU-73f" userLabel="Welcome View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rgI-o4-7cJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Welcome" id="NbK-Al-8fm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sS5-kO-1il"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tZv-mb-KgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="492" y="1183"/>
+        </scene>
+        <!--Event Succes View Controller-->
+        <scene sceneID="M1y-T4-iG2">
+            <objects>
+                <viewController id="gc1-jJ-orG" userLabel="Event Succes View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4yw-lo-EVH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Event Page Copy" id="Eqx-TE-nZF">
+                                <rect key="frame" x="0.0" y="0.0" width="321" height="569"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JER-Et-m5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3684" y="2769"/>
+        </scene>
+        <!--Closed View Controller-->
+        <scene sceneID="16W-Bk-jtR">
+            <objects>
+                <viewController id="do5-kW-cVd" userLabel="Closed View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cPn-8V-pih">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Event Page Copy 2" id="lWn-3U-j0y">
+                                <rect key="frame" x="0.0" y="-1" width="321" height="569"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T50-hZ-gUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3146" y="1941"/>
+        </scene>
+        <!--Invite View Controller-->
+        <scene sceneID="eQ2-cU-MAh">
+            <objects>
+                <viewController id="aDd-6f-eHT" userLabel="Invite View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dc5-CZ-zXm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Invite" id="cE6-Hp-AjX">
+                                <rect key="frame" x="-1" y="0.0" width="321" height="569"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ye9-dZ-xya"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fZH-wh-GLu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1010" y="2769"/>
+        </scene>
+        <!--Start New Crew View Controller-->
+        <scene sceneID="xQ8-Lu-ZLd">
+            <objects>
+                <viewController id="b8P-yA-Yfm" userLabel="Start New Crew View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F8P-4b-NIJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Set the Plan" id="myz-Fi-6fa">
+                                <rect key="frame" x="0.0" y="-1" width="321" height="569"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2zG-sT-uZU"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OiZ-xW-dhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1010" y="3551"/>
+        </scene>
+        <!--E1 View Controller-->
+        <scene sceneID="2hN-if-u2b">
+            <objects>
+                <viewController id="I1P-lF-A4P" userLabel="E1 View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h9Q-tb-shg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BI2-9o-3OB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1010" y="4507"/>
+        </scene>
+        <!--E2 View Controller-->
+        <scene sceneID="Qup-uu-2io">
+            <objects>
+                <viewController id="7CE-P0-K6d" userLabel="E2 View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kDz-XJ-vsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EkN-Bo-bYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1522" y="4507"/>
+        </scene>
+        <!--E3 View Controller-->
+        <scene sceneID="1az-IV-JZV">
+            <objects>
+                <viewController id="HYT-lx-s6F" userLabel="E3 View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z6R-Rv-tRY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iHo-cR-1dN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2034" y="4507"/>
+        </scene>
+        <!--E4 View Controller-->
+        <scene sceneID="k86-zq-7r8">
+            <objects>
+                <viewController id="9DE-fx-z5q" userLabel="E4 View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LgF-Mc-IhV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QCt-Sf-o5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2554" y="4507"/>
+        </scene>
+        <!--E5 View Controller-->
+        <scene sceneID="D6D-VF-SnB">
+            <objects>
+                <viewController id="PeJ-m8-73H" userLabel="E5 View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ybs-yP-tHx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VfB-lt-4f8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3146" y="4507"/>
+        </scene>
+        <!--E6 View Controller-->
+        <scene sceneID="F1D-eq-Vde">
+            <objects>
+                <viewController id="6el-mv-874" userLabel="E6 View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tpy-CL-TNE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NRr-8w-uqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3684" y="4507"/>
+        </scene>
+        <!--Add Guests View Controller-->
+        <scene sceneID="o0a-kw-ugh">
+            <objects>
+                <viewController id="vN5-6P-jMu" userLabel="Add Guests View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5mp-wg-GgO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Choose the Crew" id="cSn-EU-QFt">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1F6-qg-HOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1522" y="3551"/>
+        </scene>
+        <!--Search Location View Controller-->
+        <scene sceneID="6OT-cl-8WM">
+            <objects>
+                <viewController id="B27-8N-Bem" userLabel="Search Location View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iB3-cE-BBQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Pick the Spot" id="R8c-zG-TCB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JdJ-tl-3FH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2034" y="3551"/>
+        </scene>
+        <!--Select Time View Controller-->
+        <scene sceneID="iax-Wy-JYl">
+            <objects>
+                <viewController id="9jF-gb-3dS" userLabel="Select Time View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="746-H5-x7Y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Event Page Copy 3" id="EnC-zY-Wm1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1VF-fL-dGo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2442" y="3557"/>
+        </scene>
+        <!--Event View Controller-->
+        <scene sceneID="dpX-aQ-fc1">
+            <objects>
+                <viewController id="fcM-v0-n8R" userLabel="Event View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kKE-yC-2V9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Event Page" id="DOD-yF-frf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PQ0-uQ-W1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3146" y="2769"/>
+        </scene>
+        <!--RSVP View Controller-->
+        <scene sceneID="y0S-0a-wYg">
+            <objects>
+                <viewController id="j2z-as-xIY" userLabel="RSVP View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vr3-HY-E3h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Invite Copy" id="Eor-hb-cZT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="569"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wUR-kQ-uvW"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="826-u3-0Ou" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1010" y="1941"/>
+        </scene>
+        <!--Suggest Location View Controller-->
+        <scene sceneID="8iF-KX-UQu">
+            <objects>
+                <viewController id="SeY-8y-4Qd" userLabel="Suggest Location View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jqr-M0-xjw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Pick the Spot Copy" id="JGx-GO-gPp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QC7-5f-JKJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1522" y="1941"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2xw-Cf-JcW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iuu-el-2sy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PqV-Fd-7hG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3a0-lU-73f" kind="relationship" relationship="rootViewController" id="TXW-QC-Tzm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rkD-bn-y64" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-40" y="1183"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Choose the Crew" width="320" height="568"/>
+        <image name="Event Page" width="320" height="568"/>
+        <image name="Event Page Copy" width="321" height="569"/>
+        <image name="Event Page Copy 2" width="321" height="569"/>
+        <image name="Event Page Copy 3" width="320" height="568"/>
+        <image name="Invite" width="321" height="569"/>
+        <image name="Invite Copy" width="320" height="569"/>
+        <image name="Pick the Spot" width="320" height="568"/>
+        <image name="Pick the Spot Copy" width="320" height="568"/>
+        <image name="Set the Plan" width="321" height="569"/>
+        <image name="Welcome" width="320" height="568"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
