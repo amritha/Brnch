@@ -45,7 +45,7 @@ class EventViewController: UIViewController {
             var suffix = items.valueForKeyPath("suffix") as! NSArray
             println("\(prefix[0])original\(suffix[0])")
             
-            var photoUrl = NSURL(string: "\(prefix[1])original\(suffix[1])")
+            var photoUrl = NSURL(string: "\(prefix[3])original\(suffix[3])")
             
             self.venueImageView.setImageWithURL(photoUrl)
             
@@ -81,30 +81,30 @@ class EventViewController: UIViewController {
         let userCalendar = NSCalendar.currentCalendar()
         
         
-        let competitionDate = NSDateComponents()
-        competitionDate.year = 2015
-        competitionDate.month = 6
-        competitionDate.day = 26
-        competitionDate.hour = 08
-        competitionDate.minute = 00
-        competitionDate.second = 00
-        let competitionDay = userCalendar.dateFromComponents(competitionDate)!
+        let brunchDate = NSDateComponents()
+        brunchDate.year = 2015
+        brunchDate.month = 6
+        brunchDate.day = 26
+        brunchDate.hour = 08
+        brunchDate.minute = 00
+        brunchDate.second = 00
+        let brunchDay = userCalendar.dateFromComponents(brunchDate)!
         
         //Compare dates
         // Here we compare the two dates
-        competitionDay.timeIntervalSinceDate(currentDate!)
+        brunchDay.timeIntervalSinceDate(currentDate!)
         
         let dayCalendarUnit: NSCalendarUnit = (.CalendarUnitDay | .CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond )
         
         //here we change the seconds to hours,minutes and days
-        let CompetitionDayDifference = userCalendar.components(
-            dayCalendarUnit, fromDate: currentDate!, toDate: competitionDay,
+        let brunchDayDifference = userCalendar.components(
+            dayCalendarUnit, fromDate: currentDate!, toDate: brunchDay,
             options: nil)
         //finally, here we set the variable to our remaining time
-        var daysLeft = CompetitionDayDifference.day
-        var hoursLeft = CompetitionDayDifference.hour
-        var minutesLeft = CompetitionDayDifference.minute
-        var secondsLeft = CompetitionDayDifference.second
+        var daysLeft = brunchDayDifference.day
+        var hoursLeft = brunchDayDifference.hour
+        var minutesLeft = brunchDayDifference.minute
+        var secondsLeft = brunchDayDifference.second
         
         //daysLabel.text = String(daysLeft)
         if hoursLeft > 9
