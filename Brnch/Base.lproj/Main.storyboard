@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="B27-8N-Bem">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="b8P-yA-Yfm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -141,7 +141,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vN5-6P-jMu" kind="push" id="uas-Eb-gn9"/>
+                                    <segue destination="I1P-lF-A4P" kind="modal" id="gfR-lO-XtA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -152,21 +152,135 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiZ-xW-dhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1398" y="3551"/>
+            <point key="canvasLocation" x="1438" y="3551"/>
         </scene>
-        <!--E1 View Controller-->
+        <!--Create Brunch View Controller-->
         <scene sceneID="2hN-if-u2b">
             <objects>
-                <viewController id="I1P-lF-A4P" userLabel="E1 View Controller" sceneMemberID="viewController">
+                <viewController id="I1P-lF-A4P" customClass="CreateBrunchViewController" customModule="Brnch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h9Q-tb-shg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="8eC-cT-VhO" userLabel="Add Crew View">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="eoi-tk-2ya" userLabel="Add Crew Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" red="0.68235294117647061" green="0.26666666666666666" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pbq-1X-feV">
+                                        <rect key="frame" x="260" y="25" width="32" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Next">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressAddCrewNextButton:" destination="I1P-lF-A4P" eventType="touchUpInside" id="Ed6-fO-gMp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="K7R-kO-MOZ" appends="YES" id="Baf-8O-C6b"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="HDh-8n-kGn" userLabel="Add Location View">
+                                <rect key="frame" x="0.0" y="66" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="TTs-Lt-Rif" userLabel="Add Location Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qVq-Kp-7Lj">
+                                        <rect key="frame" x="260" y="22" width="32" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Next">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressAddLocationNextButton:" destination="I1P-lF-A4P" eventType="touchUpInside" id="J5X-fP-6XA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="d6M-53-YPG" appends="YES" id="rf9-Mu-8Q2"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="WpR-X9-G1Y" userLabel="Add Time View">
+                                <rect key="frame" x="0.0" y="132" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="Smf-9X-HBg" userLabel="Add Time Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.68627450980392157" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ib8-FC-5QE">
+                                        <rect key="frame" x="260" y="25" width="37" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressAddTimeNextButton:" destination="I1P-lF-A4P" eventType="touchUpInside" id="ngz-KL-Ebf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="s3H-Fg-mKd" appends="YES" id="zmA-uC-mSr"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="sl5-as-pY0"/>
+                    <connections>
+                        <outlet property="addCrewContentView" destination="eoi-tk-2ya" id="lY8-Xv-NPl"/>
+                        <outlet property="addCrewNextButton" destination="Pbq-1X-feV" id="iuQ-4i-Q9v"/>
+                        <outlet property="addCrewTapGesture" destination="K7R-kO-MOZ" id="eA4-g7-2tI"/>
+                        <outlet property="addCrewView" destination="8eC-cT-VhO" id="aac-3e-rgE"/>
+                        <outlet property="addLocationContentView" destination="TTs-Lt-Rif" id="VQb-aq-nyc"/>
+                        <outlet property="addLocationNextButton" destination="qVq-Kp-7Lj" id="fyC-qI-hQe"/>
+                        <outlet property="addLocationTapGesture" destination="d6M-53-YPG" id="pdO-hA-DqW"/>
+                        <outlet property="addLocationView" destination="HDh-8n-kGn" id="Euk-c1-gfs"/>
+                        <outlet property="addTimeContentView" destination="Smf-9X-HBg" id="2ND-N2-fLG"/>
+                        <outlet property="addTimeDoneButton" destination="ib8-FC-5QE" id="ROY-Zb-xrY"/>
+                        <outlet property="addTimeTapGesture" destination="s3H-Fg-mKd" id="mBa-DA-WBe"/>
+                        <outlet property="addTimeView" destination="WpR-X9-G1Y" id="z1a-7F-Rgm"/>
+                        <segue destination="fcM-v0-n8R" kind="modal" identifier="eventCreatedSegue" id="WjW-Xh-01q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BI2-9o-3OB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="K7R-kO-MOZ" userLabel="Add Crew Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="didTapAddCrew:" destination="I1P-lF-A4P" id="Pyr-gc-kuO"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="d6M-53-YPG" userLabel="Add Location Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="didTapAddLcation:" destination="I1P-lF-A4P" id="eeD-um-LPr"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="s3H-Fg-mKd" userLabel="Add Time Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="didTapAddTime:" destination="I1P-lF-A4P" id="vLL-Jv-0Sx"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1010" y="4507"/>
+            <point key="canvasLocation" x="1845" y="3551"/>
         </scene>
         <!--E2 View Controller-->
         <scene sceneID="Qup-uu-2io">
@@ -180,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EkN-Bo-bYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1522" y="4507"/>
+            <point key="canvasLocation" x="1450" y="5087"/>
         </scene>
         <!--E3 View Controller-->
         <scene sceneID="1az-IV-JZV">
@@ -194,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iHo-cR-1dN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2034" y="4507"/>
+            <point key="canvasLocation" x="1968" y="5075"/>
         </scene>
         <!--E4 View Controller-->
         <scene sceneID="k86-zq-7r8">
@@ -208,7 +322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCt-Sf-o5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2554" y="4507"/>
+            <point key="canvasLocation" x="2356" y="5075"/>
         </scene>
         <!--E5 View Controller-->
         <scene sceneID="D6D-VF-SnB">
@@ -241,7 +355,7 @@
         <!--Add Guests View Controller-->
         <scene sceneID="o0a-kw-ugh">
             <objects>
-                <viewController id="vN5-6P-jMu" userLabel="Add Guests View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddCrewViewController" id="vN5-6P-jMu" userLabel="Add Guests View Controller" customClass="AddCrewViewController" customModule="Brnch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5mp-wg-GgO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,10 +370,12 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="B27-8N-Bem" kind="push" id="jDe-ma-CAo"/>
-                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="yL4-cL-YaJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.68235294117647061" green="0.26666666666666666" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -267,12 +383,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1F6-qg-HOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1922" y="3551"/>
+            <point key="canvasLocation" x="1388" y="4291"/>
         </scene>
         <!--Add Location View Controller-->
         <scene sceneID="6OT-cl-8WM">
             <objects>
-                <viewController id="B27-8N-Bem" userLabel="Add Location View Controller" customClass="AddLocationViewController" customModule="Brnch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddLocationViewController" id="B27-8N-Bem" userLabel="Add Location View Controller" customClass="AddLocationViewController" customModule="Brnch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iB3-cE-BBQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -306,7 +422,7 @@
                                         <rect key="frame" x="0.0" y="22" width="326" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hsx-TX-QmV" id="VKU-SP-rf4">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="62.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TbR-ZY-Mpf">
@@ -350,11 +466,16 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" id="IXg-fF-5LR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="J5q-nL-MyM"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="searchField" destination="GEH-Ma-55m" id="o8Y-iS-GXp"/>
                         <outlet property="tableView" destination="uHg-j4-hqE" id="FQo-ST-nqp"/>
@@ -362,12 +483,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JdJ-tl-3FH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2566" y="3551"/>
+            <point key="canvasLocation" x="1806" y="4291"/>
         </scene>
         <!--Select Time View Controller-->
         <scene sceneID="iax-Wy-JYl">
             <objects>
-                <viewController id="9jF-gb-3dS" userLabel="Select Time View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddTimeViewController" id="9jF-gb-3dS" userLabel="Select Time View Controller" customClass="AddTimeViewController" customModule="Brnch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="746-H5-x7Y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,13 +497,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
+                            <view contentMode="scaleToFill" id="Fkc-Ix-yIZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.68627450980392157" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1VF-fL-dGo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2974" y="3557"/>
+            <point key="canvasLocation" x="2206" y="4291"/>
         </scene>
         <!--Event View Controller-->
         <scene sceneID="dpX-aQ-fc1">
@@ -433,7 +559,7 @@
                                         <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mfj-Y5-gqG">
-                                        <rect key="frame" x="190" y="98.5" width="34" height="20"/>
+                                        <rect key="frame" x="190" y="99" width="34" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -506,7 +632,7 @@
         <!--Navigation Controller-->
         <scene sceneID="HWm-Ub-PxU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UBl-b0-UmB" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="UBl-b0-UmB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rdb-wk-8Dm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
