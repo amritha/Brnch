@@ -10,6 +10,8 @@ import UIKit
 
 class EventViewController: UIViewController {
 
+    // salih 
+    
     @IBOutlet weak var venueImageView: UIImageView!
     @IBOutlet weak var secondsLabel: UILabel!
     @IBOutlet weak var minutesLabel: UILabel!
