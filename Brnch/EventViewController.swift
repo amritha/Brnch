@@ -85,8 +85,8 @@ class EventViewController: UIViewController {
         brunchDate.year = 2015
         brunchDate.month = 6
         brunchDate.day = 26
-        brunchDate.hour = 08
-        brunchDate.minute = 00
+        brunchDate.hour = 11
+        brunchDate.minute = 30
         brunchDate.second = 00
         let brunchDay = userCalendar.dateFromComponents(brunchDate)!
         

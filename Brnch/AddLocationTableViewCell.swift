@@ -12,6 +12,7 @@ class AddLocationTableViewCell: UITableViewCell {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var iconImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

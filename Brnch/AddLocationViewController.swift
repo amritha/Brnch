@@ -55,9 +55,20 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
         
         //Category pics declarations
         var category = venue["categories"] as! NSArray
-        var icon = category.valueForKeyPath("icon") as! NSArray
+        var icons = category.valueForKeyPath("icon") as! NSArray
+        
+        var prefix = icons[0].valueForKeyPath("prefix") as! String
+        //var suffix = icon.valueForKeyPath("suffix") as! NSArray
+        
+        //println("\(prefix)")
+        var iconUrlString = prefix
         
         
+        var iconUrl = NSURL(string: "\(iconUrlString)bg_64.png")
+        println("\(iconUrl)")
+
+        
+        cell.iconImageView.setImageWithURL(iconUrl)
         cell.locationLabel.text = title
         cell.addressLabel.text = address
 
@@ -92,6 +103,9 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
                 
                 self.foursquare = json["response"] as! NSDictionary
                 self.venues = self.foursquare.valueForKeyPath("venues") as! [NSDictionary]
+                
+                //Categories
+                
                 
                 
                 //self.locations = self.venues valueForKeyPath("locations") as! NSDictionary
