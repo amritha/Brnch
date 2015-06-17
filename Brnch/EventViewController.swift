@@ -8,18 +8,22 @@
 
 import UIKit
 
-class EventViewController: UIViewController {
+class EventViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var venueImageView: UIImageView!
     @IBOutlet weak var secondsLabel: UILabel!
     @IBOutlet weak var minutesLabel: UILabel!
     @IBOutlet weak var hoursLabel: UILabel!
+    @IBOutlet weak var cameraButton: UIButton!
     
     var foursquare : NSDictionary!
     var photos : NSDictionary!
     
     
     var timer = NSTimer()
+    
+    
+    var imagePicker : UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,7 +139,52 @@ class EventViewController: UIViewController {
     
     }
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+    }
     
+    @IBAction func didPressCamera(sender: AnyObject) {
+        
+        //Declaring image picker
+        imagePicker =  UIImagePickerController()
+        imagePicker.delegate = self
+
+        //Creating action sheet
+        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
+        
+        //Choose Photo UIAlertAction
+        let choosePhotoAction = UIAlertAction(title: "Choose Photo", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.imagePicker.sourceType = .PhotoLibrary
+            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+        })
+        
+        //Take Photo UIAlertAction
+        let takePhotoAction = UIAlertAction(title: "Take Photo", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.imagePicker.sourceType = .Camera
+            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+        })
+        
+        //Cancel UIAlertAction
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            println("Cancelled")
+        })
+        
+        
+        //Add actions to action sheet
+        optionMenu.addAction(choosePhotoAction)
+        optionMenu.addAction(takePhotoAction)
+        optionMenu.addAction(cancelAction)
+        
+        //Present action sheet on click
+        self.presentViewController(optionMenu, animated: true, completion: nil)
+    
+       
+    }
+    
+
 
     /*
     // MARK: - Navigation
