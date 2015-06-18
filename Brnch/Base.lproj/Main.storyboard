@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="fcM-v0-n8R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3a0-lU-73f">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -31,7 +31,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="wcz-18-8Ff">
             <objects>
-                <viewController id="3a0-lU-73f" userLabel="Welcome View Controller" sceneMemberID="viewController">
+                <viewController id="3a0-lU-73f" userLabel="Welcome View Controller" customClass="WelcomeViewController" customModule="Brnch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rgI-o4-7cJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,6 +46,9 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="didPressConnectFacebook:" destination="3a0-lU-73f" eventType="touchUpInside" id="42m-50-vbf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,7 +57,7 @@
                     <connections>
                         <segue destination="fKt-hg-CX3" kind="modal" id="KEL-CV-boG"/>
                         <segue destination="DjU-UI-gIE" kind="modal" id="r9t-2w-529"/>
-                        <segue destination="UBl-b0-UmB" kind="modal" id="Cgb-yX-zIn"/>
+                        <segue destination="UBl-b0-UmB" kind="modal" identifier="firstLoginSegue" id="Cgb-yX-zIn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZv-mb-KgA" userLabel="First Responder" sceneMemberID="firstResponder"/>

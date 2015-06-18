@@ -21,6 +21,7 @@
 		EFE3D1611B2E8411006F3E71 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE3D1601B2E8411006F3E71 /* Common.swift */; };
 		EFE3D1631B2E89A4006F3E71 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE3D1621B2E89A4006F3E71 /* EventViewController.swift */; };
 		EFE3D1661B2EA0A8006F3E71 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE3D1651B2EA0A8006F3E71 /* dummy.m */; };
+		EFE3D21F1B326C54006F3E71 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE3D21E1B326C54006F3E71 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		EFE3D1621B2E89A4006F3E71 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		EFE3D1641B2EA0A8006F3E71 /* Brnch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Brnch-Bridging-Header.h"; sourceTree = "<group>"; };
 		EFE3D1651B2EA0A8006F3E71 /* dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dummy.m; sourceTree = "<group>"; };
+		EFE3D21E1B326C54006F3E71 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		F3755548F4006F6FA374519A /* libPods-Brnch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Brnch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 				5E3DA9861B30AB2600CB1BCB /* AddCrewViewController.swift */,
 				5E3DA9881B30AB3200CB1BCB /* AddTimeViewController.swift */,
 				EFE3D1621B2E89A4006F3E71 /* EventViewController.swift */,
+				EFE3D21E1B326C54006F3E71 /* WelcomeViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFE3D1661B2EA0A8006F3E71 /* dummy.m in Sources */,
+				EFE3D21F1B326C54006F3E71 /* WelcomeViewController.swift in Sources */,
 				EFE3D1631B2E89A4006F3E71 /* EventViewController.swift in Sources */,
 				EFE3D1611B2E8411006F3E71 /* Common.swift in Sources */,
 				EFE3D15F1B2E8114006F3E71 /* AddLocationTableViewCell.swift in Sources */,
@@ -447,6 +451,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/amrithaprasad/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = Brnch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -462,6 +470,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/amrithaprasad/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = Brnch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

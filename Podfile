@@ -4,7 +4,10 @@
 target 'Brnch' do
 
 pod 'AFNetworking'
+pod 'Parse'
+pod 'ParseFacebookUtilsV4'
 end
+
 
 target 'BrnchTests' do
 

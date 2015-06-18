@@ -9,6 +9,31 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Brnch-Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Brnch-FBSDKCoreKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Brnch-FBSDKLoginKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Brnch-Parse.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Brnch-ParseFacebookUtilsV4.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Brnch.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>483E66A2DD3E7F63F984799C</key>
+		<key>10EC328E8C9B3CE08C3F6D14</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AFD89BB465B72B71C24CB764</key>
+		<key>3EA4340684B0D978E48880CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>68D8E436DB34F1F7A25D6853</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7C3FA880287B348A9F8FEDD2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9AADF4E8272A4D97C63B1476</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A861576C74F9BBE396808FC1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE361CC211815145F89E6BC4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
