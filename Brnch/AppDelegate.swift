@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKShareKit
+import FBSDKLoginKit
 
 
 @UIApplicationMain
@@ -21,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Parse
         Parse.setApplicationId("7MS5wZa6vItzAW7q1SWdDd2378pcxEvbOMSqE1SN", clientKey: "moNvruZg6zQ0kntm37s1kFzPuvbEMQsfcGcwiHA7")
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        
+        //FBLoginView.self
+        //FBProfilePictureView.self
 
         
         return true

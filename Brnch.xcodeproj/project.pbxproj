@@ -22,6 +22,7 @@
 		EFE3D1631B2E89A4006F3E71 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE3D1621B2E89A4006F3E71 /* EventViewController.swift */; };
 		EFE3D1661B2EA0A8006F3E71 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE3D1651B2EA0A8006F3E71 /* dummy.m */; };
 		EFE3D21F1B326C54006F3E71 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE3D21E1B326C54006F3E71 /* WelcomeViewController.swift */; };
+		EFE3D2391B33D5E3006F3E71 /* AddContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE3D2381B33D5E3006F3E71 /* AddContactTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,12 @@
 		EFE3D1641B2EA0A8006F3E71 /* Brnch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Brnch-Bridging-Header.h"; sourceTree = "<group>"; };
 		EFE3D1651B2EA0A8006F3E71 /* dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dummy.m; sourceTree = "<group>"; };
 		EFE3D21E1B326C54006F3E71 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		EFE3D22E1B33C88A006F3E71 /* FacebookSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FacebookSDK; path = ../FacebookSDK; sourceTree = "<group>"; };
+		EFE3D2301B33C8F1006F3E71 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		EFE3D2311B33C8F1006F3E71 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		EFE3D2321B33C8F1006F3E71 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKMessengerShareKit.framework; path = ../FacebookSDK/FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
+		EFE3D2331B33C8F1006F3E71 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		EFE3D2381B33D5E3006F3E71 /* AddContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactTableViewCell.swift; sourceTree = "<group>"; };
 		F3755548F4006F6FA374519A /* libPods-Brnch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Brnch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -90,6 +97,11 @@
 		1B853D2B42C66D60C3C71F58 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EFE3D2301B33C8F1006F3E71 /* FBSDKCoreKit.framework */,
+				EFE3D2311B33C8F1006F3E71 /* FBSDKLoginKit.framework */,
+				EFE3D2321B33C8F1006F3E71 /* FBSDKMessengerShareKit.framework */,
+				EFE3D2331B33C8F1006F3E71 /* FBSDKShareKit.framework */,
+				EFE3D22E1B33C88A006F3E71 /* FacebookSDK */,
 				F3755548F4006F6FA374519A /* libPods-Brnch.a */,
 			);
 			name = Frameworks;
@@ -174,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				EFE3D15E1B2E8114006F3E71 /* AddLocationTableViewCell.swift */,
+				EFE3D2381B33D5E3006F3E71 /* AddContactTableViewCell.swift */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -316,6 +329,7 @@
 				EFE3D1661B2EA0A8006F3E71 /* dummy.m in Sources */,
 				EFE3D21F1B326C54006F3E71 /* WelcomeViewController.swift in Sources */,
 				EFE3D1631B2E89A4006F3E71 /* EventViewController.swift in Sources */,
+				EFE3D2391B33D5E3006F3E71 /* AddContactTableViewCell.swift in Sources */,
 				EFE3D1611B2E8411006F3E71 /* Common.swift in Sources */,
 				EFE3D15F1B2E8114006F3E71 /* AddLocationTableViewCell.swift in Sources */,
 				5E3DA9891B30AB3200CB1BCB /* AddTimeViewController.swift in Sources */,

@@ -47,6 +47,8 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - Bolts
+  - FBSDKCoreKit
   - Parse
   - ParseFacebookUtilsV4
 
