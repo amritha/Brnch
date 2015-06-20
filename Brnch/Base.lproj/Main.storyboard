@@ -134,20 +134,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Set the Plan" id="myz-Fi-6fa">
-                                <rect key="frame" x="0.0" y="-1" width="321" height="569"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MRY-RT-en4">
-                                <rect key="frame" x="53" y="355" width="214" height="44"/>
+                            <view contentMode="scaleToFill" id="Hgg-kp-l7a">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="I1P-lF-A4P" kind="modal" id="gfR-lO-XtA"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CreateYourBrunch_01" id="Xap-XH-DLw">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MRY-RT-en4">
+                                        <rect key="frame" x="16" y="444" width="289" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Get Started" backgroundImage="Button_01">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="I1P-lF-A4P" kind="modal" id="gfR-lO-XtA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.80392156862745101" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -163,107 +172,143 @@
             <objects>
                 <viewController id="I1P-lF-A4P" customClass="CreateBrunchViewController" customModule="Brnch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h9Q-tb-shg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="960" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="8eC-cT-VhO" userLabel="Add Crew View">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <view contentMode="scaleToFill" id="SCj-II-G6f" userLabel="CrewLocationTime View">
+                                <rect key="frame" x="0.0" y="0.0" width="960" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" id="eoi-tk-2ya" userLabel="Add Crew Content View">
+                                    <view contentMode="scaleToFill" id="8eC-cT-VhO" userLabel="Add Crew View">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" red="0.68235294117647061" green="0.26666666666666666" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pbq-1X-feV">
-                                        <rect key="frame" x="260" y="25" width="32" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Next">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" id="eoi-tk-2ya" userLabel="Add Crew Content View">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" red="0.68235294117647061" green="0.26666666666666666" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <connections>
-                                            <action selector="didPressAddCrewNextButton:" destination="I1P-lF-A4P" eventType="touchUpInside" id="Ed6-fO-gMp"/>
+                                            <outletCollection property="gestureRecognizers" destination="K7R-kO-MOZ" appends="YES" id="Baf-8O-C6b"/>
                                         </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="K7R-kO-MOZ" appends="YES" id="Baf-8O-C6b"/>
-                                </connections>
-                            </view>
-                            <view contentMode="scaleToFill" id="HDh-8n-kGn" userLabel="Add Location View">
-                                <rect key="frame" x="0.0" y="66" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" id="TTs-Lt-Rif" userLabel="Add Location Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="HDh-8n-kGn" userLabel="Add Location View">
+                                        <rect key="frame" x="320" y="0.0" width="320" height="568"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qVq-Kp-7Lj">
-                                        <rect key="frame" x="260" y="22" width="32" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Next">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" id="TTs-Lt-Rif" userLabel="Add Location Content View">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <connections>
-                                            <action selector="didPressAddLocationNextButton:" destination="I1P-lF-A4P" eventType="touchUpInside" id="J5X-fP-6XA"/>
+                                            <outletCollection property="gestureRecognizers" destination="d6M-53-YPG" appends="YES" id="rf9-Mu-8Q2"/>
                                         </connections>
-                                    </button>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="WpR-X9-G1Y" userLabel="Add Time View">
+                                        <rect key="frame" x="640" y="0.0" width="320" height="568"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" id="Smf-9X-HBg" userLabel="Add Time Content View">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.68627450980392157" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="s3H-Fg-mKd" appends="YES" id="zmA-uC-mSr"/>
+                                        </connections>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="d6M-53-YPG" appends="YES" id="rf9-Mu-8Q2"/>
-                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" id="WpR-X9-G1Y" userLabel="Add Time View">
-                                <rect key="frame" x="0.0" y="132" width="320" height="568"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Create_BG_04" id="xNb-ch-X5M">
+                                <rect key="frame" x="0.0" y="-352" width="960" height="1154"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" id="Smf-9X-HBg" userLabel="Add Time Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" red="1" green="0.68627450980392157" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ib8-FC-5QE">
-                                        <rect key="frame" x="260" y="25" width="37" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Done">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didPressAddTimeNextButton:" destination="I1P-lF-A4P" eventType="touchUpInside" id="ngz-KL-Ebf"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Create_Crew_01" id="lMF-co-K45">
+                                <rect key="frame" x="95" y="74" width="29" height="8"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Create_Place_01" id="7MB-xM-sqv">
+                                <rect key="frame" x="144" y="74" width="32" height="8"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Create_Time_01" id="Uoa-tD-RJt">
+                                <rect key="frame" x="197" y="74" width="25" height="7"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Create_PlanYourBrunch_01" id="f1R-Rw-wdU">
+                                <rect key="frame" x="72" y="34" width="177" height="13"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="a1Y-rr-PXf" userLabel="Place Button">
+                                <rect key="frame" x="140" y="68" width="39" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="s3H-Fg-mKd" appends="YES" id="zmA-uC-mSr"/>
+                                    <action selector="didPressLocationButton:" destination="I1P-lF-A4P" eventType="touchUpInside" id="ZG0-Ra-lqb"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cZy-fs-rZV" userLabel="Time Button">
+                                <rect key="frame" x="190" y="68" width="39" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressTimeButton:" destination="I1P-lF-A4P" eventType="touchUpInside" id="xQp-co-ruD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xs3-Jf-WnO" userLabel="Crew Button">
+                                <rect key="frame" x="90" y="69" width="39" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressCrewButton:" destination="I1P-lF-A4P" eventType="touchUpInside" id="Ono-du-tce"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" id="9fc-0b-rGN" userLabel="Underline View">
+                                <rect key="frame" x="92" y="85" width="35" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="sl5-as-pY0"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="960" height="568"/>
                     <connections>
+                        <outlet property="addCrewButton" destination="xs3-Jf-WnO" id="bHz-ss-wPQ"/>
                         <outlet property="addCrewContentView" destination="eoi-tk-2ya" id="lY8-Xv-NPl"/>
-                        <outlet property="addCrewNextButton" destination="Pbq-1X-feV" id="iuQ-4i-Q9v"/>
                         <outlet property="addCrewTapGesture" destination="K7R-kO-MOZ" id="eA4-g7-2tI"/>
                         <outlet property="addCrewView" destination="8eC-cT-VhO" id="aac-3e-rgE"/>
+                        <outlet property="addLocationButton" destination="a1Y-rr-PXf" id="MHp-NO-MvN"/>
                         <outlet property="addLocationContentView" destination="TTs-Lt-Rif" id="VQb-aq-nyc"/>
-                        <outlet property="addLocationNextButton" destination="qVq-Kp-7Lj" id="fyC-qI-hQe"/>
                         <outlet property="addLocationTapGesture" destination="d6M-53-YPG" id="pdO-hA-DqW"/>
                         <outlet property="addLocationView" destination="HDh-8n-kGn" id="Euk-c1-gfs"/>
+                        <outlet property="addTimeButton" destination="cZy-fs-rZV" id="gOa-yf-DFL"/>
                         <outlet property="addTimeContentView" destination="Smf-9X-HBg" id="2ND-N2-fLG"/>
-                        <outlet property="addTimeDoneButton" destination="ib8-FC-5QE" id="ROY-Zb-xrY"/>
                         <outlet property="addTimeTapGesture" destination="s3H-Fg-mKd" id="mBa-DA-WBe"/>
                         <outlet property="addTimeView" destination="WpR-X9-G1Y" id="z1a-7F-Rgm"/>
+                        <outlet property="crewLocationTimeView" destination="SCj-II-G6f" id="ffs-5C-Nhl"/>
+                        <outlet property="underlineView" destination="9fc-0b-rGN" id="Hdw-gb-GDU"/>
                         <segue destination="fcM-v0-n8R" kind="modal" identifier="eventCreatedSegue" id="WjW-Xh-01q"/>
                     </connections>
                 </viewController>
@@ -284,7 +329,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1845" y="3551"/>
+            <point key="canvasLocation" x="2099" y="3551"/>
         </scene>
         <!--E2 View Controller-->
         <scene sceneID="Qup-uu-2io">
@@ -398,7 +443,7 @@
                                         <rect key="frame" x="0.0" y="22" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RR8-3J-YDU" id="e4m-4H-ShT">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="64.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amritha Prasad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UYs-mr-ZDp">
@@ -475,7 +520,7 @@
                                         <rect key="frame" x="0.0" y="22" width="326" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hsx-TX-QmV" id="VKU-SP-rf4">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="64.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TbR-ZY-Mpf">
@@ -654,7 +699,7 @@
                                         <rect key="frame" x="0.0" y="22" width="326" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bzq-Ua-dPZ" id="BHv-rU-nJI">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -773,13 +818,19 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Button_01" width="289" height="45"/>
+        <image name="CreateYourBrunch_01" width="320" height="568"/>
+        <image name="Create_BG_04" width="320" height="1704"/>
+        <image name="Create_Crew_01" width="29" height="8"/>
+        <image name="Create_Place_01" width="32" height="8"/>
+        <image name="Create_PlanYourBrunch_01" width="177" height="13"/>
+        <image name="Create_Time_01" width="25" height="7"/>
         <image name="Event Page Copy" width="321" height="569"/>
         <image name="Event Page Copy 2" width="321" height="569"/>
         <image name="Event Page Copy 3" width="320" height="568"/>
         <image name="Invite" width="321" height="569"/>
         <image name="Invite Copy" width="320" height="569"/>
         <image name="Pick the Spot Copy" width="320" height="568"/>
-        <image name="Set the Plan" width="321" height="569"/>
         <image name="Welcome" width="320" height="568"/>
         <image name="camera_icon" width="64" height="52"/>
         <image name="search-icon-small" width="36" height="35"/>

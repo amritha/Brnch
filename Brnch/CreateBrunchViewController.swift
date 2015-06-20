@@ -13,22 +13,28 @@ class CreateBrunchViewController: UIViewController {
     // Add Crew Outlets
     @IBOutlet weak var addCrewView: UIView!
     @IBOutlet weak var addCrewContentView: UIView!
-    @IBOutlet weak var addCrewNextButton: UIButton!
+    @IBOutlet weak var addCrewButton: UIButton!
     
     // Add Location Outlets
     @IBOutlet weak var addLocationView: UIView!
     @IBOutlet weak var addLocationContentView: UIView!
-    @IBOutlet weak var addLocationNextButton: UIButton!
+    @IBOutlet weak var addLocationButton: UIButton!
     
     // Add Time Outlets
     @IBOutlet weak var addTimeView: UIView!
     @IBOutlet weak var addTimeContentView: UIView!
-    @IBOutlet weak var addTimeDoneButton: UIButton!
+    @IBOutlet weak var addTimeButton: UIButton!
+    
+    // Outlet for All three
+    @IBOutlet weak var crewLocationTimeView: UIView!
     
     // Tap Gesture Recognizers
     @IBOutlet var addCrewTapGesture: UITapGestureRecognizer!
     @IBOutlet var addLocationTapGesture: UITapGestureRecognizer!
     @IBOutlet var addTimeTapGesture: UITapGestureRecognizer!
+    
+    @IBOutlet weak var underlineView: UIView!
+    
     
     // View Controller Variables
     var addCrewViewController: AddCrewViewController!
@@ -39,6 +45,15 @@ class CreateBrunchViewController: UIViewController {
     var addCrewViewOriginalCenter: CGPoint!
     var addLocationViewOriginalCenter: CGPoint!
     var addTimeViewOriginalCenter: CGPoint!
+    var crewLocationTimeViewOriginalCenter:CGPoint!
+    
+    var crewCenterX: CGFloat!
+    var locationCenterX: CGFloat!
+    var timeCenterX: CGFloat!
+    
+    var underlineCrewX: CGFloat!
+    var underlineLocationX: CGFloat!
+    var underlineTimeX: CGFloat!
     
     // Hidden Centers
     var addLocationViewHiddenCenter: CGPoint!
@@ -47,9 +62,21 @@ class CreateBrunchViewController: UIViewController {
     var addTimeViewCenterOffset: CGFloat! = 450
     
     // Variables for Spring animations
-    var springDuration: NSTimeInterval! = 0.7
+    var springDuration: NSTimeInterval! = 0.6
     var springDamping: CGFloat! = 0.80
     var springVelocity: CGFloat! = 0
+    
+    var underlineSpringDuration: NSTimeInterval! = 0.3
+    var underlineSpringDelay: NSTimeInterval! = 0
+    
+    var underlineSpringDurationTwo: NSTimeInterval! = 0.14
+    var underlineSpringDelayTwo: NSTimeInterval! = 0.14
+    
+    var underlineTransformScaleX: CGFloat! = 3
+    var underlineTransformScaleY: CGFloat! = 1
+    
+    // Keeping track of the location
+    var currentStep: String!
     
     
     override func viewDidLoad() {
@@ -64,25 +91,33 @@ class CreateBrunchViewController: UIViewController {
         
         // Display the crew view controller in the crew content view
         displayContentController(addCrewViewController, destination: addCrewContentView)
+        displayContentController(self.addLocationViewController, destination: self.addLocationContentView)
+        displayContentController(self.addTimeViewController, destination: self.addTimeContentView)
+        
+        underlineCrewX = underlineView.center.x
+        underlineLocationX = underlineView.center.x + 50
+        underlineTimeX = underlineView.center.x + 100
         
         // Set all the original centers
         addCrewViewOriginalCenter = addCrewView.center
         addLocationViewOriginalCenter = addLocationView.center
         addTimeViewOriginalCenter = addTimeView.center
+        crewLocationTimeViewOriginalCenter = crewLocationTimeView.center
         
-        // Define where Locattion and Time live when they are hidden
-        addLocationViewHiddenCenter = CGPoint(x: addLocationViewOriginalCenter.x, y: addLocationViewOriginalCenter.y + addLocationViewCenterOffset)
-        addTimeViewHiddenCenter = CGPoint(x: addTimeViewOriginalCenter.x, y: addTimeViewOriginalCenter.y + addTimeViewCenterOffset)
+        crewCenterX = crewLocationTimeView.center.x
+        locationCenterX = crewLocationTimeView.center.x - 320
+        timeCenterX = crewLocationTimeView.center.x - 640
         
         // Hide Location and Time view controllers
-        addLocationView.center = addLocationViewHiddenCenter
-        addTimeView.center = addTimeViewHiddenCenter
+        //        addLocationView.center = addLocationViewHiddenCenter
+        //        addTimeView.center = addTimeViewHiddenCenter
         
         // Turn off all tap gesture recognizers
         addCrewTapGesture.enabled = false
         addLocationTapGesture.enabled = false
         addTimeTapGesture.enabled = false
         
+        currentStep = "Crew"
         // Do any additional setup after loading the view.
     }
     
@@ -111,52 +146,98 @@ class CreateBrunchViewController: UIViewController {
         
     }
     
+    func moveUnderline(selection: CGFloat!) {
+        
+
+        UIView.animateWithDuration(underlineSpringDuration, delay: underlineSpringDelay, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            self.underlineView.center = CGPoint(x: selection, y: self.underlineView.center.y)
+            }) { (Bool) -> Void in
+        }
+        
+        UIView.animateWithDuration(underlineSpringDuration, delay: underlineSpringDelay, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            self.underlineView.transform = CGAffineTransformMakeScale(self.underlineTransformScaleX, 1)
+            }) { (Bool) -> Void in
+        }
+        
+        UIView.animateWithDuration(underlineSpringDurationTwo, delay: underlineSpringDelayTwo, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            self.underlineView.transform = CGAffineTransformMakeScale(1, 1)
+            }) { (Bool) -> Void in
+        }
+    }
+    
+    func moveToView(selection: CGFloat!) {
+        
+        
+    }
+    
     func stepOneCrew() {
         // Step 1: Add your Crew
         println("Crew")
         
-        displayContentController(addCrewViewController, destination: addCrewContentView)
         
-        addCrewTapGesture.enabled = false
-        
-        UIView.animateWithDuration(springDuration, delay: 0, usingSpringWithDamping: self.springDamping, initialSpringVelocity: self.springVelocity, options: nil, animations: { () -> Void in
-            self.addCrewView.center = self.addCrewViewOriginalCenter
-            self.addLocationView.center = self.addLocationViewHiddenCenter
-            self.addTimeView.center = self.addTimeViewHiddenCenter
+        if currentStep == "Crew" {
+            println("Don't Move")
             
-            self.addCrewNextButton.alpha = 1
-            self.addLocationNextButton.alpha = 0
-            self.addTimeDoneButton.alpha = 0
+        } else {
+            println("Moved")
+            currentStep = "Crew"
             
-            }) { (Bool) -> Void in
-                self.hideContentController(self.addLocationViewController, destination: self.addLocationContentView)
-                self.hideContentController(self.addTimeViewController, destination: self.addTimeContentView)
+            
+            //        displayContentController(addCrewViewController, destination: addCrewContentView)
+            //
+            
+            UIView.animateWithDuration(springDuration, delay: 0, usingSpringWithDamping: self.springDamping, initialSpringVelocity: self.springVelocity, options: nil, animations: { () -> Void in
+                
+                self.crewLocationTimeView.center = CGPoint(x: self.crewCenterX, y: self.crewLocationTimeView.center.y)
+                
+                
+                }) { (Bool) -> Void in
+                    
+                    //                self.hideContentController(self.addLocationViewController, destination: self.addLocationContentView)
+                    //                self.hideContentController(self.addTimeViewController, destination: self.addTimeContentView)
+            }
+            
+            // Underline Crew
+            moveUnderline(underlineCrewX)
+            
+            
         }
         
         
     }
     
+    
     func stepTwoLocation() {
         // Step 2: Change your Location
         println("Location")
         
-        displayContentController(self.addLocationViewController, destination: self.addLocationContentView)
         
-        addLocationTapGesture.enabled = false
+        if currentStep == "Location" {
+            println("Don't Move")
+            
+        } else {
+            println("Moved")
+            currentStep = "Location"
+            
+            displayContentController(self.addLocationViewController, destination: self.addLocationContentView)
+            
+            
+            UIView.animateWithDuration(springDuration, delay: 0, usingSpringWithDamping: self.springDamping, initialSpringVelocity: self.springVelocity, options: nil, animations: { () -> Void in
+                
+                self.crewLocationTimeView.center = CGPoint(x: self.locationCenterX, y: self.crewLocationTimeView.center.y)
+                
+                }) { (Bool) -> Void in
+                    
+                    //                self.hideContentController(self.addCrewViewController, destination: self.addCrewContentView)
+                    //                self.hideContentController(self.addTimeViewController, destination: self.addTimeContentView)
+            }
+            
+            // Underline Location
+            moveUnderline(underlineLocationX)
+
         
-        UIView.animateWithDuration(springDuration, delay: 0, usingSpringWithDamping: self.springDamping, initialSpringVelocity: self.springVelocity, options: nil, animations: { () -> Void in            self.addCrewView.center = self.addCrewViewOriginalCenter
-            self.addLocationView.center = self.addLocationViewOriginalCenter
-            self.addTimeView.center = self.addTimeViewHiddenCenter
-            
-            self.addCrewNextButton.alpha = 0
-            self.addLocationNextButton.alpha = 1
-            self.addTimeDoneButton.alpha = 0
-            
-            }) { (Bool) -> Void in
-                self.addCrewTapGesture.enabled = true
-                self.hideContentController(self.addCrewViewController, destination: self.addCrewContentView)
-                self.hideContentController(self.addTimeViewController, destination: self.addTimeContentView)
         }
+        
         
     }
     
@@ -164,21 +245,31 @@ class CreateBrunchViewController: UIViewController {
         // Step 3: Change your time
         println("Time")
         
-        displayContentController(self.addTimeViewController, destination: self.addTimeContentView)
         
-        UIView.animateWithDuration(springDuration, delay: 0, usingSpringWithDamping: self.springDamping, initialSpringVelocity: self.springVelocity, options: nil, animations: { () -> Void in            self.addCrewView.center = self.addCrewViewOriginalCenter
-            self.addLocationView.center = self.addLocationViewOriginalCenter
-            self.addTimeView.center = self.addTimeViewOriginalCenter
+        if currentStep == "Time" {
+            println("Don't Move")
             
-            self.addCrewNextButton.alpha = 0
-            self.addLocationNextButton.alpha = 0
-            self.addTimeDoneButton.alpha = 1
+        } else {
+            println("Moved")
+            currentStep = "Time"
             
-            }) { (Bool) -> Void in
-                self.addCrewTapGesture.enabled = true
-                self.addLocationTapGesture.enabled = true
-                self.hideContentController(self.addCrewViewController, destination: self.addCrewContentView)
-                self.hideContentController(self.addLocationViewController, destination: self.addLocationContentView)
+            //        displayContentController(self.addTimeViewController, destination: self.addTimeContentView)
+            //
+            
+            UIView.animateWithDuration(springDuration, delay: 0, usingSpringWithDamping: self.springDamping, initialSpringVelocity: self.springVelocity, options: nil, animations: { () -> Void in
+                
+                self.crewLocationTimeView.center = CGPoint(x: self.timeCenterX, y: self.crewLocationTimeView.center.y)
+                
+                }) { (Bool) -> Void in
+                    
+                    //                self.hideContentController(self.addCrewViewController, destination: self.addCrewContentView)
+                    //                self.hideContentController(self.addLocationViewController, destination: self.addLocationContentView)
+            }
+            
+            // Underline Time
+            moveUnderline(underlineTimeX)
+
+            
         }
         
         
@@ -186,20 +277,22 @@ class CreateBrunchViewController: UIViewController {
     }
     
     
-    @IBAction func didPressAddCrewNextButton(sender: AnyObject) {
+    @IBAction func didPressCrewButton(sender: AnyObject) {
         println("Crew Next Button")
+        stepOneCrew()
+    }
+    
+    @IBAction func didPressLocationButton(sender: AnyObject) {
+        println("Location Next Button")
         stepTwoLocation()
     }
     
-    @IBAction func didPressAddLocationNextButton(sender: AnyObject) {
-        println("Location Next Button")
-        stepThreeTime()
-    }
-    
-    @IBAction func didPressAddTimeNextButton(sender: AnyObject) {
+    @IBAction func didPressTimeButton(sender: AnyObject) {
         println("Time Done Button")
-        performSegueWithIdentifier("eventCreatedSegue", sender: nil)
-
+        stepThreeTime()
+        
+        //        performSegueWithIdentifier("eventCreatedSegue", sender: nil)
+        
     }
     
     
