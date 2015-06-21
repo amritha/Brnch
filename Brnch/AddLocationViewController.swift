@@ -81,6 +81,7 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! AddLocationTableViewCell
         
+        //Storing previous location selected in order to unselect it when another is selected
         if(prevLocation != nil){
             self.prevLocation.selected = false
             self.prevLocation.addButton.selected = false

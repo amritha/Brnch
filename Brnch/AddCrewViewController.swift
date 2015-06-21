@@ -15,7 +15,7 @@ class AddCrewViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     var invited = ["Amritha Prasad", "Joshua Bisch", "Salih Abdul-Karim"]
-    var contacts = ["John Badalamenti", "Deepa Prasad", "Emily Weslosky"]
+    var contacts = ["John Badalamenti", "Deepa Prasad", "Emily Weslosky", "Aziz Ansari", "Katrina Kaif", "Beyonce Knowles"]
     
     var sections = ["Invited", "Contacts"]
     
@@ -25,7 +25,7 @@ class AddCrewViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         
-        
+        //tableView.allowsSelection = false
         // Do any additional setup after loading the view.
         
 
@@ -37,7 +37,13 @@ class AddCrewViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if section == 0 {
+            return invited.count
+        }
+        else if section == 1 {
+            return contacts.count
+        }
+        return 0
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -53,6 +59,7 @@ class AddCrewViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.addButton.selected = true
         case 1:
             cell.nameLabel?.text = contacts[indexPath.row]
+            cell.addButton.selected = false
         default:
             cell.nameLabel?.text = "Other"
         }
@@ -73,10 +80,10 @@ class AddCrewViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         switch (section) {
         case 0:
-            label.text = "Invited";
+            label.text = "Invited"
             //return sectionHeaderView
         case 1:
-            label.text = "Contacts";
+            label.text = "Contacts"
             //return sectionHeaderView
                     //return sectionHeaderView
         default:
@@ -91,6 +98,35 @@ class AddCrewViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! AddContactTableViewCell
+        
+        var newIndexPath : NSIndexPath!
+        if indexPath.section == 0 {
+            newIndexPath = NSIndexPath(forRow: contacts.count, inSection: 1)
+            contacts.append(invited[indexPath.row])
+            invited.removeAtIndex(indexPath.row)
+            cell.addButton.selected = false
+        }else {
+            newIndexPath = NSIndexPath(forRow: invited.count, inSection: 0)
+            invited.append(contacts[indexPath.row])
+            contacts.removeAtIndex(indexPath.row)
+            cell.addButton.selected = true
+        }
+        
+        println("\(indexPath.row) \(indexPath.section)")
+        tableView.beginUpdates()
+        tableView.moveRowAtIndexPath(indexPath, toIndexPath: newIndexPath)
+       
+        
+        
+        tableView.endUpdates()
+        
+        //tableView.reloadData()
+        
+        
     }
 
     /*
