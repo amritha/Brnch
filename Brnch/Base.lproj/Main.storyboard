@@ -163,7 +163,7 @@
         <!--Create Brunch View Controller-->
         <scene sceneID="2hN-if-u2b">
             <objects>
-                <viewController id="I1P-lF-A4P" customClass="CreateBrunchViewController" customModule="Brnch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateBrunchViewController" id="I1P-lF-A4P" customClass="CreateBrunchViewController" customModule="Brnch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h9Q-tb-shg">
                         <rect key="frame" x="0.0" y="0.0" width="960" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -285,12 +285,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1R3-vq-P3N">
-                                <rect key="frame" x="0.0" y="568" width="320" height="60"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Create_DoneButton_01" id="vMI-2A-4oO">
+                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1R3-vq-P3N" userLabel="Done Button">
+                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Create_DoneButton_01">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="didPressDoneButton:" destination="I1P-lF-A4P" eventType="touchUpInside" id="9zR-ZH-tny"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -313,6 +320,7 @@
                         <outlet property="addTimeView" destination="WpR-X9-G1Y" id="z1a-7F-Rgm"/>
                         <outlet property="crewLocationTimeView" destination="SCj-II-G6f" id="ffs-5C-Nhl"/>
                         <outlet property="doneButton" destination="1R3-vq-P3N" id="Bwb-mZ-2xf"/>
+                        <outlet property="doneButtonImage" destination="vMI-2A-4oO" id="qUu-QD-HuG"/>
                         <outlet property="underlineView" destination="9fc-0b-rGN" id="Hdw-gb-GDU"/>
                         <segue destination="fcM-v0-n8R" kind="modal" identifier="eventCreatedSegue" id="WjW-Xh-01q"/>
                     </connections>
@@ -453,7 +461,7 @@
                                         <rect key="frame" x="0.0" y="22" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RR8-3J-YDU" id="e4m-4H-ShT">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="64.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amritha Prasad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UYs-mr-ZDp">
@@ -530,7 +538,7 @@
                                         <rect key="frame" x="0.0" y="22" width="326" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hsx-TX-QmV" id="VKU-SP-rf4">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="64.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TbR-ZY-Mpf">
@@ -591,7 +599,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JdJ-tl-3FH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1806" y="4291"/>
+            <point key="canvasLocation" x="1809" y="4291"/>
         </scene>
         <!--Select Time View Controller-->
         <scene sceneID="iax-Wy-JYl">
@@ -606,59 +614,102 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.68627450980392157" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday @" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gp3-bz-5Ip">
-                                <rect key="frame" x="94" y="123" width="132" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EtB-Fl-HuF">
-                                <rect key="frame" x="133" y="180" width="54" height="30"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Times_01_Saturday" id="YjE-sb-q60">
+                                <rect key="frame" x="1" y="111" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Times_01_Sunday" id="Apl-Kn-93h">
+                                <rect key="frame" x="0.0" y="172" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Sections_01_Time" id="GXy-tP-haT">
+                                <rect key="frame" x="1" y="233" width="319" height="30"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Times_01_10ish" id="ukm-Ot-wFl">
+                                <rect key="frame" x="0.0" y="263" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Times_01_11ish" id="f4A-h9-e1o">
+                                <rect key="frame" x="0.0" y="323" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Times_01_12ish" id="grK-11-LPi">
+                                <rect key="frame" x="0.0" y="383" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Times_01_1ish" id="xOw-4E-5VN">
+                                <rect key="frame" x="0.0" y="443" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EtB-Fl-HuF">
+                                <rect key="frame" x="260" y="279" width="28" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="10-ish">
+                                <state key="normal" image="Button_Check_01_Empty">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="selected" image="Button_Check_01_Checked"/>
                                 <connections>
                                     <action selector="onPress:" destination="9jF-gb-3dS" eventType="touchUpInside" id="Mek-Ut-QzA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8Km-Ec-r39">
-                                <rect key="frame" x="133" y="236" width="54" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jle-ra-LwF">
+                                <rect key="frame" x="235" y="399" width="79" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="11-ish">
+                                <state key="normal" image="Button_Check_01_Empty">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="onPress:" destination="9jF-gb-3dS" eventType="touchUpInside" id="DOv-7R-xmO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jle-ra-LwF">
-                                <rect key="frame" x="133" y="292" width="54" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="12-ish">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="selected" image="Button_Check_01_Checked"/>
                                 <connections>
                                     <action selector="onPress:" destination="9jF-gb-3dS" eventType="touchUpInside" id="XKQ-S4-tby"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fac-2e-0kj">
-                                <rect key="frame" x="133" y="350" width="54" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fac-2e-0kj">
+                                <rect key="frame" x="260" y="458" width="28" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="1-ish">
+                                <state key="normal" image="Button_Check_01_Empty">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="selected" image="Button_Check_01_Checked"/>
                                 <connections>
                                     <action selector="onPress:" destination="9jF-gb-3dS" eventType="touchUpInside" id="bm6-SY-sit"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8Km-Ec-r39">
+                                <rect key="frame" x="260" y="339" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Button_Check_01_Empty">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="Button_Check_01_Checked"/>
+                                <connections>
+                                    <action selector="onPress:" destination="9jF-gb-3dS" eventType="touchUpInside" id="DOv-7R-xmO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sKn-Je-WAx">
+                                <rect key="frame" x="260" y="127" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Button_Check_01_Empty">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="Button_Check_01_Checked"/>
+                                <connections>
+                                    <action selector="onDayPress:" destination="9jF-gb-3dS" eventType="touchUpInside" id="NTT-um-Hyo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Uqs-b6-rzR">
+                                <rect key="frame" x="260" y="188" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Button_Check_01_Empty">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="Button_Check_01_Checked"/>
+                                <connections>
+                                    <action selector="onDayPress:" destination="9jF-gb-3dS" eventType="touchUpInside" id="pSh-70-pWL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -667,6 +718,8 @@
                     <connections>
                         <outlet property="elevenButton" destination="8Km-Ec-r39" id="XPv-F4-SJJ"/>
                         <outlet property="oneButton" destination="Fac-2e-0kj" id="peO-20-tXD"/>
+                        <outlet property="saturdayButton" destination="sKn-Je-WAx" id="9Nl-DD-ELw"/>
+                        <outlet property="sundayButton" destination="Uqs-b6-rzR" id="J9j-Ph-Tvc"/>
                         <outlet property="tenButton" destination="EtB-Fl-HuF" id="PB7-lX-0ZK"/>
                         <outlet property="twelveButton" destination="jle-ra-LwF" id="AhM-VN-wnu"/>
                     </connections>
@@ -766,7 +819,7 @@
                                         <rect key="frame" x="0.0" y="22" width="326" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bzq-Ua-dPZ" id="BHv-rU-nJI">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -886,10 +939,12 @@
     </scenes>
     <resources>
         <image name="Button_01" width="289" height="45"/>
+        <image name="Button_Check_01_Checked" width="28" height="28"/>
+        <image name="Button_Check_01_Empty" width="28" height="28"/>
         <image name="CreateYourBrunch_01" width="320" height="568"/>
         <image name="Create_BG_04" width="320" height="1704"/>
         <image name="Create_Crew_01" width="29" height="8"/>
-        <image name="Create_DoneButton_01" width="640" height="120"/>
+        <image name="Create_DoneButton_01" width="320" height="60"/>
         <image name="Create_Place_01" width="32" height="8"/>
         <image name="Create_PlanYourBrunch_01" width="177" height="13"/>
         <image name="Create_Time_01" width="25" height="7"/>
@@ -898,6 +953,13 @@
         <image name="Invite" width="321" height="569"/>
         <image name="Invite Copy" width="320" height="569"/>
         <image name="Pick the Spot Copy" width="320" height="568"/>
+        <image name="Sections_01_Time" width="319" height="30"/>
+        <image name="Times_01_10ish" width="320" height="60"/>
+        <image name="Times_01_11ish" width="320" height="60"/>
+        <image name="Times_01_12ish" width="320" height="60"/>
+        <image name="Times_01_1ish" width="320" height="60"/>
+        <image name="Times_01_Saturday" width="320" height="60"/>
+        <image name="Times_01_Sunday" width="320" height="60"/>
         <image name="camera_icon" width="64" height="52"/>
         <image name="search-icon-small" width="36" height="35"/>
     </resources>

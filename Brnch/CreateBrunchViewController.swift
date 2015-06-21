@@ -33,7 +33,8 @@ class CreateBrunchViewController: UIViewController {
     @IBOutlet var addLocationTapGesture: UITapGestureRecognizer!
     @IBOutlet var addTimeTapGesture: UITapGestureRecognizer!
     
-  
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var doneButtonImage: UIImageView!
     
     @IBOutlet weak var underlineView: UIView!
     
@@ -78,7 +79,11 @@ class CreateBrunchViewController: UIViewController {
     var underlineTransformScaleY: CGFloat! = 1
     
     // Keeping track of the location
-    var currentStep: String!
+    var currentStep: Step!
+    
+    // Keeping track of whether we can be done or not
+    // If its true, show the done button
+    var doneButtonShown: Bool!
     
     //Brnch PFObject
     var brnch : PFObject!
@@ -88,7 +93,6 @@ class CreateBrunchViewController: UIViewController {
     
     var timer : NSTimer!
     
-    @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,7 +101,7 @@ class CreateBrunchViewController: UIViewController {
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("doneButtonAppear"), userInfo: nil, repeats: true)
         
         //User
-       currentUser = PFUser.currentUser()
+        currentUser = PFUser.currentUser()
         if currentUser != nil {
             println("\(currentUser)")
         } else {
@@ -109,7 +113,12 @@ class CreateBrunchViewController: UIViewController {
         // Instantiate View Controllers
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-    
+        // Keyboard shown or hidden
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        
+        
+        
         
         addCrewViewController = storyboard.instantiateViewControllerWithIdentifier("AddCrewViewController") as! AddCrewViewController
         addLocationViewController = storyboard.instantiateViewControllerWithIdentifier("AddLocationViewController") as! AddLocationViewController
@@ -143,7 +152,13 @@ class CreateBrunchViewController: UIViewController {
         addLocationTapGesture.enabled = false
         addTimeTapGesture.enabled = false
         
-        currentStep = "Crew"
+        currentStep = .Crew
+        
+        // Move Done Button out of frame and clip to bounds
+        doneButton.frame = CGRect(x: 0, y: 570, width: 320, height: 60)
+        self.doneButtonImage.frame = self.doneButton.frame
+
+        
         // Do any additional setup after loading the view.
         
         //Create Brunch Object
@@ -155,6 +170,12 @@ class CreateBrunchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Enum for what Step we are currently on
+    enum Step {
+        case Crew
+        case Location
+        case Time
+    }
     
     
     func displayContentController(content: UIViewController, destination: UIView) {
@@ -177,7 +198,6 @@ class CreateBrunchViewController: UIViewController {
     
     func moveUnderline(selection: CGFloat!) {
         
-
         UIView.animateWithDuration(underlineSpringDuration, delay: underlineSpringDelay, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
             self.underlineView.center = CGPoint(x: selection, y: self.underlineView.center.y)
             }) { (Bool) -> Void in
@@ -204,12 +224,12 @@ class CreateBrunchViewController: UIViewController {
         println("Crew")
         
         
-        if currentStep == "Crew" {
+        if currentStep == .Crew {
             println("Don't Move")
             
         } else {
             println("Moved")
-            currentStep = "Crew"
+            currentStep = .Crew
             
             
             //        displayContentController(addCrewViewController, destination: addCrewContentView)
@@ -242,15 +262,14 @@ class CreateBrunchViewController: UIViewController {
         println("Location")
         
         
-        if currentStep == "Location" {
+        if currentStep == .Location {
             println("Don't Move")
             
         } else {
             println("Moved")
-            currentStep = "Location"
+            currentStep = .Location
             
-            displayContentController(self.addLocationViewController, destination: self.addLocationContentView)
-            
+            // displayContentController(self.addLocationViewController, destination: self.addLocationContentView)
             
             UIView.animateWithDuration(springDuration, delay: 0, usingSpringWithDamping: self.springDamping, initialSpringVelocity: self.springVelocity, options: nil, animations: { () -> Void in
                 
@@ -264,8 +283,8 @@ class CreateBrunchViewController: UIViewController {
             
             // Underline Location
             moveUnderline(underlineLocationX)
-
-        
+            
+            
         }
         
         
@@ -278,12 +297,12 @@ class CreateBrunchViewController: UIViewController {
         println("Time")
         
         
-        if currentStep == "Time" {
+        if currentStep == .Time {
             println("Don't Move")
             
         } else {
             println("Moved")
-            currentStep = "Time"
+            currentStep = .Time
             
             //        displayContentController(self.addTimeViewController, destination: self.addTimeContentView)
             //
@@ -300,7 +319,7 @@ class CreateBrunchViewController: UIViewController {
             
             // Underline Time
             moveUnderline(underlineTimeX)
-
+            
             
         }
         
@@ -355,12 +374,56 @@ class CreateBrunchViewController: UIViewController {
         {
             UIView.animateWithDuration(0.4, animations: {
                 self.doneButton.frame = CGRect(x: 0, y: 509, width: 320, height: 60)
+                self.doneButtonImage.frame = self.doneButton.frame
             })
             timer.invalidate()
+            doneButtonShown = true
+        } else {
+            doneButtonShown = false
         }
         
     }
+    
+    func moveDoneButtonUp(){
+        println("move done button up")
+        UIView.animateWithDuration(0.4, animations: {
+            self.doneButton.frame = CGRect(x: 0, y: 315, width: 320, height: 30)
+            self.doneButtonImage.frame = self.doneButton.frame
+        })
+        
+    }
+    
+    func moveDoneButtonDown() {
+        println("move done button down")
+        UIView.animateWithDuration(0.4, animations: {
+            self.doneButton.frame = CGRect(x: 0, y: 509, width: 320, height: 60)
+            self.doneButtonImage.frame = self.doneButton.frame
+        })
+        
+    }
+    
+    func keyboardWillShow(notification: NSNotification!) {
+        println("keyboard will show")
+        if doneButtonShown == true {
+            moveDoneButtonUp()
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification!) {
+        println("keyboard will hide")
+        if doneButtonShown == true {
+            moveDoneButtonDown()
+            
+        }
+    }
+    
+    @IBAction func didPressDoneButton(sender: AnyObject) {
+        println("done")
+    }
+    
 
+    
+    
     /*
     // MARK: - Navigation
     

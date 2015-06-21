@@ -14,6 +14,13 @@ class AddTimeViewController: UIViewController {
     @IBOutlet weak var elevenButton: UIButton!
     @IBOutlet weak var twelveButton: UIButton!
     @IBOutlet weak var oneButton: UIButton!
+    
+    @IBOutlet weak var saturdayButton: UIButton!
+    @IBOutlet weak var sundayButton: UIButton!
+    
+    var createBrunchViewController:  CreateBrunchViewController!
+    
+    
     var brnch : PFObject!
     
     
@@ -28,6 +35,24 @@ class AddTimeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Day Selection
+    
+    @IBAction func onDayPress(sender: AnyObject) {
+        
+        if sender as! NSObject == saturdayButton{
+            saturdayButton.selected = true
+            sundayButton.selected = false
+            
+        } else if sender as! NSObject == sundayButton{
+            saturdayButton.selected = false
+            sundayButton.selected = true
+            
+        }
+        
+    }
+    
+    
+    // Time Selection
     @IBAction func onPress(sender: AnyObject) {
         if sender as! NSObject == tenButton{
             tenButton.selected = true
