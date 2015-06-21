@@ -419,6 +419,21 @@ class CreateBrunchViewController: UIViewController {
     
     @IBAction func didPressDoneButton(sender: AnyObject) {
         println("done")
+        
+        //Initialize Brunch event
+        let thread = PFObject(className:"Thread")
+        thread.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                println("saved location")
+            } else {
+                println("error location")
+            }
+        }
+        
+        
+        
+        performSegueWithIdentifier("eventCreatedSegue", sender: nil)
     }
     
 

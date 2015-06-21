@@ -43,9 +43,31 @@ class AddTimeViewController: UIViewController {
             saturdayButton.selected = true
             sundayButton.selected = false
             
+            brnch["meet_day"] = "Saturday"
+            brnch.saveInBackgroundWithBlock {
+                (success: Bool, error: NSError?) -> Void in
+                if (success) {
+                    println("saved time")
+                } else {
+                    println("error time")
+                }
+            }
+
+            
         } else if sender as! NSObject == sundayButton{
             saturdayButton.selected = false
             sundayButton.selected = true
+            
+            brnch["meet_day"] = "Sunday"
+            brnch.saveInBackgroundWithBlock {
+                (success: Bool, error: NSError?) -> Void in
+                if (success) {
+                    println("saved time")
+                } else {
+                    println("error time")
+                }
+            }
+
             
         }
         
