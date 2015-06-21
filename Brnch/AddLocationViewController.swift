@@ -19,6 +19,7 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
     let clientId = "A2Y1X5HKMAGSCEEOWBORM2KN12SF4UR2ZENUXGTI0WVBDPPR%20"
     let clientSecret = "0TWO54EXQRI3JBRBGZ3H013X1Y25WR32R4RFDKWGN5QJPINS%20"
     var prevLocation : AddLocationTableViewCell!
+    var brnch : PFObject!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +80,8 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        view.endEditing(true)
+        
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! AddLocationTableViewCell
         
         //Storing previous location selected in order to unselect it when another is selected
@@ -90,7 +93,8 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
         prevLocation = cell
         prevLocation.selected = true
         prevLocation.addButton.selected = true
-        /*brnch["venue"] = prevLocation.locationLabel.text
+        //Saves brnch event with selected venue
+        brnch["venue"] = prevLocation.locationLabel.text
         brnch.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
@@ -98,7 +102,8 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
             } else {
                 println("error location")
             }
-        }*/
+        }
+
 
     }
     

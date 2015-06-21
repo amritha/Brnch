@@ -101,6 +101,8 @@ class AddCrewViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        view.endEditing(true)
+        
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! AddContactTableViewCell
         
         var newIndexPath : NSIndexPath!

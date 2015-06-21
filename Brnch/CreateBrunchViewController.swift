@@ -80,12 +80,15 @@ class CreateBrunchViewController: UIViewController {
     // Keeping track of the location
     var currentStep: String!
     
+    //Brnch PFObject
+    var brnch : PFObject!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Tap Gesture
-        
+
        
         
         // Instantiate View Controllers
@@ -125,6 +128,9 @@ class CreateBrunchViewController: UIViewController {
         
         currentStep = "Crew"
         // Do any additional setup after loading the view.
+        
+        //Create Brunch Object
+        brnch = PFObject(className:"Brnch")
     }
     
     override func didReceiveMemoryWarning() {
@@ -215,6 +221,7 @@ class CreateBrunchViewController: UIViewController {
     
     func stepTwoLocation() {
         // Step 2: Change your Location
+        self.addLocationViewController.brnch = brnch
         println("Location")
         
         
@@ -248,6 +255,8 @@ class CreateBrunchViewController: UIViewController {
     }
     
     func stepThreeTime() {
+        
+        self.addTimeViewController.brnch = brnch
         // Step 3: Change your time
         println("Time")
         

@@ -10,6 +10,13 @@ import UIKit
 
 class AddTimeViewController: UIViewController {
 
+    @IBOutlet weak var tenButton: UIButton!
+    @IBOutlet weak var elevenButton: UIButton!
+    @IBOutlet weak var twelveButton: UIButton!
+    @IBOutlet weak var oneButton: UIButton!
+    var brnch : PFObject!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +28,84 @@ class AddTimeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onPress(sender: AnyObject) {
+        if sender as! NSObject == tenButton{
+            tenButton.selected = true
+            elevenButton.selected = false
+            twelveButton.selected = false
+            oneButton.selected = false
+            
+            //Save time to parse
+            brnch["meet_time"] = 10
+            brnch.saveInBackgroundWithBlock {
+                (success: Bool, error: NSError?) -> Void in
+                if (success) {
+                    println("saved time")
+                } else {
+                    println("error time")
+                }
+            }
+
+        }
+        else if sender as! NSObject == elevenButton{
+            tenButton.selected = false
+            elevenButton.selected = true
+            twelveButton.selected = false
+            oneButton.selected = false
+            
+            //Save time to parse
+            brnch["meet_time"] = 11
+            brnch.saveInBackgroundWithBlock {
+                (success: Bool, error: NSError?) -> Void in
+                if (success) {
+                    println("saved time")
+                } else {
+                    println("error time")
+                }
+            }
+
+        }
+        else if sender as! NSObject == twelveButton{
+            tenButton.selected = false
+            elevenButton.selected = false
+            twelveButton.selected = true
+            oneButton.selected = false
+            
+            //Save time to parse
+            brnch["meet_time"] = 12
+            brnch.saveInBackgroundWithBlock {
+                (success: Bool, error: NSError?) -> Void in
+                if (success) {
+                    println("saved time")
+                } else {
+                    println("error time")
+                }
+            }
+
+        }
+        else if sender as! NSObject == oneButton{
+            tenButton.selected = false
+            elevenButton.selected = false
+            twelveButton.selected = false
+            oneButton.selected = true
+            
+            //Save time to parse
+            brnch["meet_time"] = 1
+            brnch.saveInBackgroundWithBlock {
+                (success: Bool, error: NSError?) -> Void in
+                if (success) {
+                    println("saved time")
+                } else {
+                    println("error time")
+                }
+            }
+
+        }
+        else{
+        println("Error")
+        }
+        
+    }
 
     /*
     // MARK: - Navigation
