@@ -832,7 +832,7 @@
         <!--Navigation Controller-->
         <scene sceneID="HWm-Ub-PxU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="UBl-b0-UmB" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="GetStartedViewController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="UBl-b0-UmB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rdb-wk-8Dm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

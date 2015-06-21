@@ -8,3 +8,4 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 //#import <FacebookSDK/FacebookSDK.h>
 //#import "BDBOAuth1RequestOperationManager.h"
+#import "APAddressBook-Bridging.h"

@@ -8,6 +8,7 @@ pod 'Parse'
 pod 'ParseFacebookUtilsV4'
 pod 'Bolts'
 pod 'FBSDKCoreKit'
+pod 'APAddressBook/Swift'
 
 end
 

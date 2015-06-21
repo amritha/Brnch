@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Brnch-APAddressBook.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Brnch-Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0B0E2C46D170157B92D8CA95</key>
+		<key>04AAF7783C26DE7869D5C808</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>22450FC036155DB201927850</key>
+		<key>20B83CD0E3ADBF3C40A44F97</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>46723CB75B7603C20375D772</key>
+		<key>24FA23996834FCFEBBF7B21C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>618F8B1F386F29475ECEAFAA</key>
+		<key>3C6A53CD3E94169F6AFECD4B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B8F70CBE28D2C3F6E4D0FC34</key>
+		<key>3E67E81737FBFE608B94F243</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BC24635806508B2497305D9D</key>
+		<key>6EC4A9A17E5A325A1A14CC77</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C7ABD5513E22883CDE1A67E5</key>
+		<key>7E158B39FD034E916141559A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A4C62D8F89C1C76CBE4D3EFF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

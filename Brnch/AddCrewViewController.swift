@@ -15,9 +15,11 @@ class AddCrewViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     var invited = ["Amritha Prasad", "Joshua Bisch", "Salih Abdul-Karim"]
-    var contacts = ["John Badalamenti", "Deepa Prasad", "Emily Weslosky", "Aziz Ansari", "Katrina Kaif", "Beyonce Knowles"]
+    var contactsList = ["John Badalamenti", "Deepa Prasad", "Emily Weslosky", "Aziz Ansari", "Katrina Kaif", "Beyonce Knowles"]
     
     var sections = ["Invited", "Contacts"]
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,7 @@ class AddCrewViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         //tableView.allowsSelection = false
         // Do any additional setup after loading the view.
+     
         
 
     }
@@ -41,7 +44,7 @@ class AddCrewViewController: UIViewController, UITableViewDelegate, UITableViewD
             return invited.count
         }
         else if section == 1 {
-            return contacts.count
+            return contactsList.count
         }
         return 0
     }
@@ -58,7 +61,7 @@ class AddCrewViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.nameLabel?.text = invited[indexPath.row]
             cell.addButton.selected = true
         case 1:
-            cell.nameLabel?.text = contacts[indexPath.row]
+            cell.nameLabel?.text = contactsList[indexPath.row]
             cell.addButton.selected = false
         default:
             cell.nameLabel?.text = "Other"
@@ -107,14 +110,14 @@ class AddCrewViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         var newIndexPath : NSIndexPath!
         if indexPath.section == 0 {
-            newIndexPath = NSIndexPath(forRow: contacts.count, inSection: 1)
-            contacts.append(invited[indexPath.row])
+            newIndexPath = NSIndexPath(forRow: contactsList.count, inSection: 1)
+            contactsList.append(invited[indexPath.row])
             invited.removeAtIndex(indexPath.row)
             cell.addButton.selected = false
         }else {
             newIndexPath = NSIndexPath(forRow: invited.count, inSection: 0)
-            invited.append(contacts[indexPath.row])
-            contacts.removeAtIndex(indexPath.row)
+            invited.append(contactsList[indexPath.row])
+            contactsList.removeAtIndex(indexPath.row)
             cell.addButton.selected = true
         }
         

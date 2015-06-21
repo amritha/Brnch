@@ -16,6 +16,10 @@ class WelcomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+            // Show the signup or login screen
+        
+
         let logInButton = TWTRLogInButton(logInCompletion: {
             (session: TWTRSession!, error: NSError!) in
             PFTwitterUtils.logInWithBlock {
@@ -35,7 +39,7 @@ class WelcomeViewController: UIViewController {
         })
         logInButton.center = self.view.center
         self.view.addSubview(logInButton)
-
+        
         
 
     }

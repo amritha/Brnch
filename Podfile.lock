@@ -20,6 +20,9 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - APAddressBook/Core (0.1.11)
+  - APAddressBook/Swift (0.1.11):
+    - APAddressBook/Core
   - Bolts (1.2.0):
     - Bolts/AppLinks (= 1.2.0)
     - Bolts/Tasks (= 1.2.0)
@@ -47,6 +50,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - APAddressBook/Swift
   - Bolts
   - FBSDKCoreKit
   - Parse
@@ -54,6 +58,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  APAddressBook: 2c949367b190a993d2cce769a3b20bce8bcf000c
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
   FBSDKCoreKit: 84b3616a361801f190e43a9909caead7bb6087c7
   FBSDKLoginKit: 57e37106af12c9e264e473dcb75d7decdbb07fe4
