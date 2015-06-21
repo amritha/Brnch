@@ -292,6 +292,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1R3-vq-P3N">
+                                <rect key="frame" x="0.0" y="568" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Create_DoneButton_01">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -312,6 +319,7 @@
                         <outlet property="addTimeTapGesture" destination="s3H-Fg-mKd" id="mBa-DA-WBe"/>
                         <outlet property="addTimeView" destination="WpR-X9-G1Y" id="z1a-7F-Rgm"/>
                         <outlet property="crewLocationTimeView" destination="SCj-II-G6f" id="ffs-5C-Nhl"/>
+                        <outlet property="doneButton" destination="1R3-vq-P3N" id="Bwb-mZ-2xf"/>
                         <outlet property="underlineView" destination="9fc-0b-rGN" id="Hdw-gb-GDU"/>
                         <segue destination="fcM-v0-n8R" kind="modal" identifier="eventCreatedSegue" id="WjW-Xh-01q"/>
                     </connections>
@@ -888,6 +896,7 @@
         <image name="CreateYourBrunch_01" width="320" height="568"/>
         <image name="Create_BG_04" width="320" height="1704"/>
         <image name="Create_Crew_01" width="29" height="8"/>
+        <image name="Create_DoneButton_01" width="640" height="120"/>
         <image name="Create_Place_01" width="32" height="8"/>
         <image name="Create_PlanYourBrunch_01" width="177" height="13"/>
         <image name="Create_Time_01" width="25" height="7"/>

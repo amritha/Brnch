@@ -83,16 +83,23 @@ class CreateBrunchViewController: UIViewController {
     //Brnch PFObject
     var brnch : PFObject!
     
+    var timer : NSTimer!
+    
+    @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Tap Gesture
+        //Timer
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("doneButtonAppear"), userInfo: nil, repeats: true)
+        
 
        
         
         // Instantiate View Controllers
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+    
         
         addCrewViewController = storyboard.instantiateViewControllerWithIdentifier("AddCrewViewController") as! AddCrewViewController
         addLocationViewController = storyboard.instantiateViewControllerWithIdentifier("AddLocationViewController") as! AddLocationViewController
@@ -336,6 +343,17 @@ class CreateBrunchViewController: UIViewController {
     func DismissKeyboard(){
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+    }
+    
+    func doneButtonAppear(){
+        if brnch["venue"] != nil && brnch["meet_time"] != nil
+        {
+            UIView.animateWithDuration(0.4, animations: {
+                self.doneButton.frame = CGRect(x: 0, y: 509, width: 320, height: 60)
+            })
+            timer.invalidate()
+        }
+        
     }
 
     /*
