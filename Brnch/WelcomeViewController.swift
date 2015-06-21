@@ -7,11 +7,37 @@
 //
 
 import UIKit
+import TwitterKit
+
 
 class WelcomeViewController: UIViewController {
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let logInButton = TWTRLogInButton(logInCompletion: {
+            (session: TWTRSession!, error: NSError!) in
+            PFTwitterUtils.logInWithBlock {
+                (user: PFUser?, error: NSError?) -> Void in
+                if let user = user {
+                    if user.isNew {
+                        println("User signed up and logged in with Twitter!")
+                    } else {
+                        println("User logged in with Twitter!")
+                    }
+                    self.finishLogin()
+                } else {
+                    println("Uh oh. The user cancelled the Twitter login.")
+                }
+                
+            }
+        })
+        logInButton.center = self.view.center
+        self.view.addSubview(logInButton)
+
+        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -19,6 +45,8 @@ class WelcomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /*
+    //FACEBOOK API YOU ARE DEAD TO ME
     @IBAction func didPressConnectFacebook(sender: AnyObject) {
         var permissions = ["public_profile", "user_friends", "email"]
         PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions) {
@@ -66,7 +94,7 @@ class WelcomeViewController: UIViewController {
                 println("Uh oh. The user cancelled the Facebook login.")
             }
         }
-    }
+    }*/
     
     func finishLogin() {
         // Finally logged in.

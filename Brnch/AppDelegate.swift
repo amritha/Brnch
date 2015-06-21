@@ -10,6 +10,9 @@ import UIKit
 //import FBSDKCoreKit
 //import FBSDKShareKit
 //import FBSDKLoginKit
+import Fabric
+import TwitterKit
+
 
 
 @UIApplicationMain
@@ -23,10 +26,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Parse
         Parse.setApplicationId("7MS5wZa6vItzAW7q1SWdDd2378pcxEvbOMSqE1SN", clientKey: "moNvruZg6zQ0kntm37s1kFzPuvbEMQsfcGcwiHA7")
-        PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        PFTwitterUtils.initializeWithConsumerKey("QwWA4h0UhPwC9RXVvOnsDpZa8",  consumerSecret:"jF8sQxw2XOZd5mPtx2btG5jOx0bv3dkL5B01OjGoJGcS1961Hc")
+        //PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         
         //FBLoginView.self
         //FBProfilePictureView.self
+        Fabric.with([Twitter()])
 
         
         return true

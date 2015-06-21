@@ -83,6 +83,9 @@ class CreateBrunchViewController: UIViewController {
     //Brnch PFObject
     var brnch : PFObject!
     
+    //User
+    var currentUser : PFUser!
+    
     var timer : NSTimer!
     
     @IBOutlet weak var doneButton: UIButton!
@@ -93,9 +96,16 @@ class CreateBrunchViewController: UIViewController {
         //Timer
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("doneButtonAppear"), userInfo: nil, repeats: true)
         
-
-       
+        //User
+       currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            println("\(currentUser)")
+        } else {
+            // Show the signup or login screen
+        }
         
+        let username = currentUser.objectForKey("username")
+        println("Username: \(username)")
         // Instantiate View Controllers
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -334,11 +344,6 @@ class CreateBrunchViewController: UIViewController {
         self.DismissKeyboard()
     }
     
-    //How do we dismiss the keyboard?
-    @IBAction func onGeneralTap(sender: AnyObject) {
-        self.view.endEditing(true)
-        println("Tapped")
-    }
     
     func DismissKeyboard(){
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
