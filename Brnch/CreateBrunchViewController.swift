@@ -33,6 +33,8 @@ class CreateBrunchViewController: UIViewController {
     @IBOutlet var addLocationTapGesture: UITapGestureRecognizer!
     @IBOutlet var addTimeTapGesture: UITapGestureRecognizer!
     
+  
+    
     @IBOutlet weak var underlineView: UIView!
     
     
@@ -81,6 +83,10 @@ class CreateBrunchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Tap Gesture
+        
+       
         
         // Instantiate View Controllers
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -299,16 +305,30 @@ class CreateBrunchViewController: UIViewController {
     @IBAction func didTapAddCrew(sender: AnyObject) {
         println("Back to Step 1")
         stepOneCrew()
+        self.DismissKeyboard()
     }
     
     @IBAction func didTapAddLcation(sender: AnyObject) {
         println("Back to Step 2")
         stepTwoLocation()
+        self.DismissKeyboard()
     }
     
     @IBAction func didTapAddTime(sender: AnyObject) {
+        self.DismissKeyboard()
     }
     
+    //How do we dismiss the keyboard?
+    @IBAction func onGeneralTap(sender: AnyObject) {
+        self.view.endEditing(true)
+        println("Tapped")
+    }
+    
+    func DismissKeyboard(){
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+
     /*
     // MARK: - Navigation
     

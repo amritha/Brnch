@@ -18,6 +18,7 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
     var query: String!
     let clientId = "A2Y1X5HKMAGSCEEOWBORM2KN12SF4UR2ZENUXGTI0WVBDPPR%20"
     let clientSecret = "0TWO54EXQRI3JBRBGZ3H013X1Y25WR32R4RFDKWGN5QJPINS%20"
+    var prevLocation : AddLocationTableViewCell!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.delegate = self
         tableView.dataSource = self
         
-        searchField.becomeFirstResponder()
+        //searchField.becomeFirstResponder()
         //searchWithName("")
 
         // Do any additional setup after loading the view.
@@ -75,6 +76,29 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
 
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! AddLocationTableViewCell
+        
+        if(prevLocation != nil){
+            self.prevLocation.selected = false
+            self.prevLocation.addButton.selected = false
+        }
+        
+        prevLocation = cell
+        prevLocation.selected = true
+        prevLocation.addButton.selected = true
+        /*brnch["venue"] = prevLocation.locationLabel.text
+        brnch.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                println("saved location")
+            } else {
+                println("error location")
+            }
+        }*/
+
     }
     
     @IBAction func onSearchChanged(sender: AnyObject) {
