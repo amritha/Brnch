@@ -10,6 +10,7 @@ import UIKit
 
 class EventViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    @IBOutlet weak var chatView: UIView!
     @IBOutlet weak var venueImageView: UIImageView!
     @IBOutlet weak var secondsLabel: UILabel!
     @IBOutlet weak var minutesLabel: UILabel!
@@ -55,6 +56,10 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
             
             
             }
+        
+        // Keyboard shown or hidden
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
         
         
         }
@@ -182,6 +187,41 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         self.presentViewController(optionMenu, animated: true, completion: nil)
     
        
+    }
+    
+    
+    //Move Chat Window Up on Keyboard Appear
+    func moveChatUp(){
+        println("move chat up")
+        UIView.animateWithDuration(0.4, animations: {
+            self.chatView.frame = CGRect(x: 0, y: 259, width: 320, height: 50)
+            //self.doneButtonImage.frame = self.doneButton.frame
+        })
+        
+    }
+    
+    //Move Chat Window Down on Keyboard Disappear
+    func moveChatDown() {
+        println("move chat down")
+        UIView.animateWithDuration(0.4, animations: {
+            self.chatView.frame = CGRect(x: 0, y: 509, width: 320, height: 60)
+            //self.doneButtonImage.frame = self.doneButton.frame
+        })
+        
+    }
+    
+    
+    func keyboardWillShow(notification: NSNotification!) {
+        println("keyboard will show")
+        moveChatUp()
+        
+    }
+    
+    func keyboardWillHide(notification: NSNotification!) {
+        println("keyboard will hide")
+        
+        moveChatDown()
+        
     }
     
 
