@@ -44,8 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             println("Brunch is on")
             if PFUser.currentUser() != nil{
                 var storyboard = UIStoryboard(name: "Main", bundle: nil)
-                /*var vc = storyboard.instantiateViewControllerWithIdentifier("GetStartedViewController") as! UIViewController*/
-                var vc = storyboard.instantiateViewControllerWithIdentifier("EventViewController") as! UIViewController
+                var vc = storyboard.instantiateViewControllerWithIdentifier("GetStartedViewController") as! UIViewController
+                /*var vc = storyboard.instantiateViewControllerWithIdentifier("EventViewController") as! UIViewController*/
                 window?.rootViewController = vc
             }
         } else {

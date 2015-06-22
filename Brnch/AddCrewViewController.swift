@@ -27,6 +27,8 @@ class AddCrewViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         tableView.delegate = self
         tableView.dataSource = self
+        //println(UIFont.familyNames())
+        //println(UIFont.fontNamesForFamilyName("Open Sans"))
         
         //tableView.allowsSelection = false
         // Do any additional setup after loading the view.
@@ -75,19 +77,20 @@ class AddCrewViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var headerView = UIView(frame: CGRect(x: 0, y:0, width: 320, height: 40))
         
-        headerView.backgroundColor = UIColor(white: 0.2, alpha: 0.5)
+        headerView.backgroundColor = UIColor(white: 1, alpha: 0.5)
         
         var label = UILabel(frame: CGRect(x: 10, y:0, width: 300, height: 40))
         
         //label.text = "\(sections[section])"
-        label.textColor = UIColor.whiteColor()
+        label.textColor = UIColor.darkGrayColor()
+        label.font = UIFont(name: "OpenSans-Semibold", size: 12)
         
         switch (section) {
         case 0:
-            label.text = "Invited"
+            label.text = "INVITED"
             //return sectionHeaderView
         case 1:
-            label.text = "Contacts"
+            label.text = "CONTACTS"
             //return sectionHeaderView
                     //return sectionHeaderView
         default:
@@ -115,7 +118,7 @@ class AddCrewViewController: UIViewController, UITableViewDelegate, UITableViewD
             contactsList.append(invited[indexPath.row])
             invited.removeAtIndex(indexPath.row)
             cell.addButton.selected = false
-        }else {
+        } else {
             newIndexPath = NSIndexPath(forRow: invited.count, inSection: 0)
             invited.append(contactsList[indexPath.row])
             contactsList.removeAtIndex(indexPath.row)
