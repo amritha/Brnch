@@ -8,9 +8,10 @@
 
 import UIKit
 
-class EventViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class EventViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var chatView: UIView!
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var venueImageView: UIImageView!
     @IBOutlet weak var secondsLabel: UILabel!
     @IBOutlet weak var minutesLabel: UILabel!
@@ -26,11 +27,28 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
     
     var imagePicker : UIImagePickerController!
     
+    //TableView Stuff
+    @IBOutlet weak var tableView: UITableView!
+    
+    //Parse Stuff
+    var messages : [PFObject]! = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Declare Table
+        tableView.delegate = self
+        tableView.dataSource = self
+        //tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: self.messages.count - 1, inSection: 0), atScrollPosition: .Bottom, animated: true)
+            
         //Declare Timer
         timer = NSTimer.scheduledTimerWithTimeInterval(0, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
+        
+        //Timer for messages query
+        var messagesTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "queryTimer", userInfo: nil, repeats: true)
+        
+        messagesTimer.fire()
 
         
         //foursquare venue header image
@@ -69,6 +87,20 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //Function to run the query that loads messages
+    func queryTimer()
+    {
+        var query = PFQuery(className: "Message")
+        
+        query.findObjectsInBackgroundWithBlock{( results: [AnyObject]?, error: NSError?) -> Void in
+            
+            self.messages = results as! [PFObject]
+            self.tableView.reloadData()
+        }
+        
+    }
+
     
     func updateCounter(){
         let date = NSDate()
@@ -194,7 +226,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
     func moveChatUp(){
         println("move chat up")
         UIView.animateWithDuration(0.4, animations: {
-            self.chatView.frame = CGRect(x: 0, y: 259, width: 320, height: 50)
+            self.chatView.frame = CGRect(x: 0, y: 240, width: 320, height: 50)
             //self.doneButtonImage.frame = self.doneButton.frame
         })
         
@@ -224,7 +256,33 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier("ChatTableViewCell") as! ChatTableViewCell
+        
+        var message = messages[indexPath.row]
+        cell.messageLabel.text = message["text"] as? String
 
+        
+        return cell
+    }
+    
+
+    @IBAction func didPressSend(sender: AnyObject) {
+        
+        var message = PFObject(className: "Message")
+        
+        message["text"] = textField.text
+        message["user"] = PFUser.currentUser()
+        
+        message.saveInBackgroundWithBlock{(success: Bool, error: NSError?) -> Void in
+            
+            println("Saved the message")
+        }
+    }
 
     /*
     // MARK: - Navigation

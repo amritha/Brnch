@@ -800,18 +800,38 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" id="Djn-VL-D7i">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="Djn-VL-D7i">
                                 <rect key="frame" x="0.0" y="142" width="326" height="371"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="bzq-Ua-dPZ">
-                                        <rect key="frame" x="0.0" y="22" width="326" height="66"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatTableViewCell" rowHeight="80" id="bzq-Ua-dPZ" customClass="ChatTableViewCell" customModule="Brnch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="326" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bzq-Ua-dPZ" id="BHv-rU-nJI">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="65.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amritha Prasad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bvz-bO-0sl">
+                                                    <rect key="frame" x="15" y="8" width="119" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l6j-Ly-aBB">
+                                                    <rect key="frame" x="15" y="32" width="291" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageLabel" destination="l6j-Ly-aBB" id="xIR-Xn-RNW"/>
+                                            <outlet property="userLabel" destination="Bvz-bO-0sl" id="5F3-l2-DEB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -835,6 +855,9 @@
                                         <state key="normal" title="Send">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didPressSend:" destination="fcM-v0-n8R" eventType="touchUpInside" id="J9X-jJ-HkM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -847,6 +870,8 @@
                         <outlet property="hoursLabel" destination="e8s-sz-bOf" id="v3Z-o4-ns0"/>
                         <outlet property="minutesLabel" destination="t78-cT-PJL" id="B77-5W-hSh"/>
                         <outlet property="secondsLabel" destination="Mfj-Y5-gqG" id="Bgd-79-7vl"/>
+                        <outlet property="tableView" destination="Djn-VL-D7i" id="5df-Ii-ETC"/>
+                        <outlet property="textField" destination="4Xh-W7-GWT" id="9Jn-YJ-bRk"/>
                         <outlet property="venueImageView" destination="1yd-uu-BVL" id="oEL-3q-hAO"/>
                     </connections>
                 </viewController>

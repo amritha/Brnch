@@ -38,6 +38,7 @@
 		EFE3D1661B2EA0A8006F3E71 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE3D1651B2EA0A8006F3E71 /* dummy.m */; };
 		EFE3D21F1B326C54006F3E71 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE3D21E1B326C54006F3E71 /* WelcomeViewController.swift */; };
 		EFE3D2391B33D5E3006F3E71 /* AddContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE3D2381B33D5E3006F3E71 /* AddContactTableViewCell.swift */; };
+		EFE677E31B37B6C900278272 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE677E21B37B6C900278272 /* ChatTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		EFE3D2321B33C8F1006F3E71 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKMessengerShareKit.framework; path = ../FacebookSDK/FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
 		EFE3D2331B33C8F1006F3E71 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		EFE3D2381B33D5E3006F3E71 /* AddContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactTableViewCell.swift; sourceTree = "<group>"; };
+		EFE677E21B37B6C900278272 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 			children = (
 				EFE3D15E1B2E8114006F3E71 /* AddLocationTableViewCell.swift */,
 				EFE3D2381B33D5E3006F3E71 /* AddContactTableViewCell.swift */,
+				EFE677E21B37B6C900278272 /* ChatTableViewCell.swift */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				5E8D4A411B2FF2F200A7C573 /* CreateBrunchViewController.swift in Sources */,
 				5199C0AF1B27F5D300BAA7F2 /* AppDelegate.swift in Sources */,
 				EFE3D15C1B2E7E1F006F3E71 /* AddLocationViewController.swift in Sources */,
+				EFE677E31B37B6C900278272 /* ChatTableViewCell.swift in Sources */,
 				5E3DA9871B30AB2600CB1BCB /* AddCrewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
