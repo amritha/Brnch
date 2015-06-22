@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E4698EBA3AC1FB71E3E7A74 /* libPods-Brnch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4202122C47EB9643B76553 /* libPods-Brnch.a */; };
+		511FB82A1B377B51000C231E /* ClosedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FB8291B377B51000C231E /* ClosedViewController.swift */; };
 		5199C0AF1B27F5D300BAA7F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5199C0AE1B27F5D300BAA7F2 /* AppDelegate.swift */; };
 		5199C0B41B27F5D300BAA7F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5199C0B21B27F5D300BAA7F2 /* Main.storyboard */; };
 		5199C0B61B27F5D300BAA7F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5199C0B51B27F5D300BAA7F2 /* Images.xcassets */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		511FB8291B377B51000C231E /* ClosedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosedViewController.swift; sourceTree = "<group>"; };
 		5199C0A91B27F5D300BAA7F2 /* Brnch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brnch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5199C0AD1B27F5D300BAA7F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5199C0AE1B27F5D300BAA7F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				5E3DA9881B30AB3200CB1BCB /* AddTimeViewController.swift */,
 				EFE3D1621B2E89A4006F3E71 /* EventViewController.swift */,
 				EFE3D21E1B326C54006F3E71 /* WelcomeViewController.swift */,
+				511FB8291B377B51000C231E /* ClosedViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				EFE3D2391B33D5E3006F3E71 /* AddContactTableViewCell.swift in Sources */,
 				EFE3D1611B2E8411006F3E71 /* Common.swift in Sources */,
 				EFE3D15F1B2E8114006F3E71 /* AddLocationTableViewCell.swift in Sources */,
+				511FB82A1B377B51000C231E /* ClosedViewController.swift in Sources */,
 				5E3DA9891B30AB3200CB1BCB /* AddTimeViewController.swift in Sources */,
 				5E8D4A411B2FF2F200A7C573 /* CreateBrunchViewController.swift in Sources */,
 				5199C0AF1B27F5D300BAA7F2 /* AppDelegate.swift in Sources */,

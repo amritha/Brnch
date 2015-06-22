@@ -31,7 +31,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="wcz-18-8Ff">
             <objects>
-                <viewController id="3a0-lU-73f" userLabel="Welcome View Controller" customClass="WelcomeViewController" customModule="Brnch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="3a0-lU-73f" userLabel="Welcome View Controller" customClass="WelcomeViewController" customModule="Brnch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rgI-o4-7cJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,22 +80,35 @@
         <!--Closed View Controller-->
         <scene sceneID="16W-Bk-jtR">
             <objects>
-                <viewController id="do5-kW-cVd" userLabel="Closed View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClosedViewController" id="do5-kW-cVd" userLabel="Closed View Controller" customClass="ClosedViewController" customModule="Brnch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cPn-8V-pih">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Event Page Copy 2" id="lWn-3U-j0y">
-                                <rect key="frame" x="0.0" y="-1" width="321" height="569"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIT TIGHT, IT’S NOT BRUNCHDAY FUN DAY YET!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G2V-Li-cRD">
+                                <rect key="frame" x="10" y="125" width="300" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time to go" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7A2-Qt-w6n">
+                                <rect key="frame" x="64" y="231" width="192" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="countdownLabel" destination="7A2-Qt-w6n" id="JbW-Vs-jIq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T50-hZ-gUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3678" y="1941"/>
+            <point key="canvasLocation" x="1000" y="1247"/>
         </scene>
         <!--Invite View Controller-->
         <scene sceneID="eQ2-cU-MAh">
@@ -461,7 +474,7 @@
                                         <rect key="frame" x="0.0" y="22" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RR8-3J-YDU" id="e4m-4H-ShT">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="64.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amritha Prasad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UYs-mr-ZDp">
@@ -538,7 +551,7 @@
                                         <rect key="frame" x="0.0" y="22" width="326" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hsx-TX-QmV" id="VKU-SP-rf4">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="64.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TbR-ZY-Mpf">
@@ -819,7 +832,7 @@
                                         <rect key="frame" x="0.0" y="22" width="326" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bzq-Ua-dPZ" id="BHv-rU-nJI">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -949,7 +962,6 @@
         <image name="Create_PlanYourBrunch_01" width="177" height="13"/>
         <image name="Create_Time_01" width="25" height="7"/>
         <image name="Event Page Copy" width="321" height="569"/>
-        <image name="Event Page Copy 2" width="321" height="569"/>
         <image name="Invite" width="321" height="569"/>
         <image name="Invite Copy" width="320" height="569"/>
         <image name="Pick the Spot Copy" width="320" height="568"/>
