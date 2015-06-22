@@ -39,22 +39,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let dayOfWeek:Int = dateComps.weekday
         
         //Check day of the week to see if it's time for brunch
-        if  dayOfWeek == 7 || dayOfWeek == 1 {
-            //It's time for brunch goto Main View Controller
-            println("Brunch is on")
-            if PFUser.currentUser() != nil{
-                var storyboard = UIStoryboard(name: "Main", bundle: nil)
-                var vc = storyboard.instantiateViewControllerWithIdentifier("GetStartedViewController") as! UIViewController
-                /*var vc = storyboard.instantiateViewControllerWithIdentifier("EventViewController") as! UIViewController*/
-                window?.rootViewController = vc
-            }
-        } else {
-            println("Brunch is off")
-            //It's not time for brunch goto Closed View Controller
-            var storyboard = UIStoryboard(name: "Main", bundle: nil)
-            var vc = storyboard.instantiateViewControllerWithIdentifier("ClosedViewController") as! UIViewController
-            window?.rootViewController = vc
-        }
+//        if  dayOfWeek == 7 || dayOfWeek == 1 {
+//            //It's time for brunch goto Main View Controller
+//            println("Brunch is on")
+//            if PFUser.currentUser() != nil{
+//                var storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                var vc = storyboard.instantiateViewControllerWithIdentifier("GetStartedViewController") as! UIViewController
+//                /*var vc = storyboard.instantiateViewControllerWithIdentifier("EventViewController") as! UIViewController*/
+//                window?.rootViewController = vc
+//            }
+//        } else {
+//            println("Brunch is off")
+//            //It's not time for brunch goto Closed View Controller
+//            var storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            var vc = storyboard.instantiateViewControllerWithIdentifier("ClosedViewController") as! UIViewController
+//            window?.rootViewController = vc
+//        }
 
         return true
     }

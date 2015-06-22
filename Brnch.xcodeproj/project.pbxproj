@@ -17,6 +17,10 @@
 		5E3DA9871B30AB2600CB1BCB /* AddCrewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3DA9861B30AB2600CB1BCB /* AddCrewViewController.swift */; };
 		5E3DA9891B30AB3200CB1BCB /* AddTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3DA9881B30AB3200CB1BCB /* AddTimeViewController.swift */; };
 		5E8D4A411B2FF2F200A7C573 /* CreateBrunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D4A401B2FF2F200A7C573 /* CreateBrunchViewController.swift */; };
+		5E8D92661B3843D000ADF1EA /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D92651B3843D000ADF1EA /* EventDetailsViewController.swift */; };
+		5E8D92681B3844DB00ADF1EA /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D92671B3844DB00ADF1EA /* BaseTransition.swift */; };
+		5E8D926A1B3844E500ADF1EA /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D92691B3844E500ADF1EA /* FadeTransition.swift */; };
+		5E8D926D1B38451F00ADF1EA /* DetailsTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D926C1B38451F00ADF1EA /* DetailsTransition.swift */; };
 		5EC37CB11B35EE3D00F6C4B3 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EC37CA71B35EE3D00F6C4B3 /* OpenSans-Bold.ttf */; };
 		5EC37CB21B35EE3D00F6C4B3 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EC37CA81B35EE3D00F6C4B3 /* OpenSans-BoldItalic.ttf */; };
 		5EC37CB31B35EE3D00F6C4B3 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EC37CA91B35EE3D00F6C4B3 /* OpenSans-ExtraBold.ttf */; };
@@ -65,6 +69,10 @@
 		5E3DA9861B30AB2600CB1BCB /* AddCrewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrewViewController.swift; sourceTree = "<group>"; };
 		5E3DA9881B30AB3200CB1BCB /* AddTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTimeViewController.swift; sourceTree = "<group>"; };
 		5E8D4A401B2FF2F200A7C573 /* CreateBrunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBrunchViewController.swift; sourceTree = "<group>"; };
+		5E8D92651B3843D000ADF1EA /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		5E8D92671B3844DB00ADF1EA /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
+		5E8D92691B3844E500ADF1EA /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
+		5E8D926C1B38451F00ADF1EA /* DetailsTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTransition.swift; sourceTree = "<group>"; };
 		5EC37CA71B35EE3D00F6C4B3 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		5EC37CA81B35EE3D00F6C4B3 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		5EC37CA91B35EE3D00F6C4B3 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -175,6 +183,7 @@
 				5EC37CA51B35EE2A00F6C4B3 /* Fonts */,
 				5199C0B21B27F5D300BAA7F2 /* Main.storyboard */,
 				EFE3D1651B2EA0A8006F3E71 /* dummy.m */,
+				5E8D926B1B3844EC00ADF1EA /* Transition */,
 				EFE3D1601B2E8411006F3E71 /* Common.swift */,
 				5199C0B51B27F5D300BAA7F2 /* Images.xcassets */,
 				5199C0B71B27F5D300BAA7F2 /* LaunchScreen.xib */,
@@ -209,6 +218,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5E8D926B1B3844EC00ADF1EA /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				5E8D92671B3844DB00ADF1EA /* BaseTransition.swift */,
+				5E8D92691B3844E500ADF1EA /* FadeTransition.swift */,
+				5E8D926C1B38451F00ADF1EA /* DetailsTransition.swift */,
+			);
+			name = Transition;
+			sourceTree = "<group>";
+		};
 		5EC37CA51B35EE2A00F6C4B3 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +256,7 @@
 		EFE3D15A1B2E7E03006F3E71 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5E8D92651B3843D000ADF1EA /* EventDetailsViewController.swift */,
 				5E8D4A401B2FF2F200A7C573 /* CreateBrunchViewController.swift */,
 				EFE3D15B1B2E7E1F006F3E71 /* AddLocationViewController.swift */,
 				5E3DA9861B30AB2600CB1BCB /* AddCrewViewController.swift */,
@@ -419,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFE3D1661B2EA0A8006F3E71 /* dummy.m in Sources */,
+				5E8D92681B3844DB00ADF1EA /* BaseTransition.swift in Sources */,
 				EFE3D21F1B326C54006F3E71 /* WelcomeViewController.swift in Sources */,
 				EFE3D1631B2E89A4006F3E71 /* EventViewController.swift in Sources */,
 				EFE3D2391B33D5E3006F3E71 /* AddContactTableViewCell.swift in Sources */,
@@ -426,6 +447,9 @@
 				EFE3D15F1B2E8114006F3E71 /* AddLocationTableViewCell.swift in Sources */,
 				511FB82A1B377B51000C231E /* ClosedViewController.swift in Sources */,
 				5E3DA9891B30AB3200CB1BCB /* AddTimeViewController.swift in Sources */,
+				5E8D92661B3843D000ADF1EA /* EventDetailsViewController.swift in Sources */,
+				5E8D926A1B3844E500ADF1EA /* FadeTransition.swift in Sources */,
+				5E8D926D1B38451F00ADF1EA /* DetailsTransition.swift in Sources */,
 				5E8D4A411B2FF2F200A7C573 /* CreateBrunchViewController.swift in Sources */,
 				5199C0AF1B27F5D300BAA7F2 /* AppDelegate.swift in Sources */,
 				EFE3D15C1B2E7E1F006F3E71 /* AddLocationViewController.swift in Sources */,

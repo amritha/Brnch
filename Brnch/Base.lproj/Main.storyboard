@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="fcM-v0-n8R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="b8P-yA-Yfm">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -70,6 +70,49 @@
             </objects>
             <point key="canvasLocation" x="138" y="2777"/>
         </scene>
+        <!--Event Details View Controller-->
+        <scene sceneID="Qwl-Tb-Prb">
+            <objects>
+                <viewController id="KjC-Lu-t3Q" customClass="EventDetailsViewController" customModule="Brnch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BZn-b4-fbJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Create_BG_04" id="o8n-uk-GYV">
+                                <rect key="frame" x="0.0" y="-200" width="320" height="1704"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uin-mx-ZiY">
+                                <rect key="frame" x="67" y="390" width="187" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Button_04_EditBrunch">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressEditBrunch:" destination="KjC-Lu-t3Q" eventType="touchUpInside" id="nHm-pU-BhA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qGK-Kd-VVf">
+                                <rect key="frame" x="292" y="27" width="12" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="CloseX_01">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressX:" destination="KjC-Lu-t3Q" eventType="touchUpInside" id="kpW-B8-B8V"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="I1P-lF-A4P" kind="modal" identifier="editEventSegue" id="tGG-pS-ah4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MKk-dX-PbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4135" y="2769"/>
+        </scene>
         <!--Event Succes View Controller-->
         <scene sceneID="M1y-T4-iG2">
             <objects>
@@ -88,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JER-Et-m5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4216" y="2769"/>
+            <point key="canvasLocation" x="4528" y="2769"/>
         </scene>
         <!--Closed View Controller-->
         <scene sceneID="16W-Bk-jtR">
@@ -184,7 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiZ-xW-dhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1438" y="3551"/>
+            <point key="canvasLocation" x="1418" y="3551"/>
         </scene>
         <!--Create Brunch View Controller-->
         <scene sceneID="2hN-if-u2b">
@@ -824,6 +867,16 @@
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zuC-8N-mZz">
+                                        <rect key="frame" x="259" y="21" width="50" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="Button_03_View">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressView:" destination="fcM-v0-n8R" eventType="touchUpInside" id="iXp-za-ral"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -900,11 +953,12 @@
                         <outlet property="tableView" destination="Djn-VL-D7i" id="5df-Ii-ETC"/>
                         <outlet property="textField" destination="4Xh-W7-GWT" id="9Jn-YJ-bRk"/>
                         <outlet property="venueImageView" destination="1yd-uu-BVL" id="oEL-3q-hAO"/>
+                        <segue destination="KjC-Lu-t3Q" kind="modal" identifier="eventDetailsSegue" id="Ps0-L4-QDK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQ0-uQ-W1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3678" y="2769"/>
+            <point key="canvasLocation" x="3684" y="2769"/>
         </scene>
         <!--RSVP View Controller-->
         <scene sceneID="y0S-0a-wYg">
@@ -1007,8 +1061,11 @@
         <image name="Button_01" width="289" height="45"/>
         <image name="Button_02_Invite" width="75" height="25"/>
         <image name="Button_02_Remove" width="75" height="25"/>
+        <image name="Button_03_View" width="50" height="23"/>
+        <image name="Button_04_EditBrunch" width="93" height="23"/>
         <image name="Button_Check_01_Checked" width="28" height="28"/>
         <image name="Button_Check_01_Empty" width="28" height="28"/>
+        <image name="CloseX_01" width="12" height="11"/>
         <image name="CreateYourBrunch_01" width="320" height="568"/>
         <image name="Create_BG_04" width="320" height="1704"/>
         <image name="Create_Crew_01" width="29" height="8"/>
@@ -1035,4 +1092,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="tGG-pS-ah4"/>
+    </inferredMetricsTieBreakers>
 </document>

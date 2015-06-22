@@ -18,6 +18,9 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
     @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var cameraButton: UIButton!
     
+    var detailsTransition : DetailsTransition!
+    var fadeTransition : FadeTransition!
+    
     var foursquare : NSDictionary!
     var photos : NSDictionary!
     
@@ -284,6 +287,15 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         }
     }
 
+    
+    @IBAction func didPressView(sender: AnyObject) {
+        // View Details button
+        performSegueWithIdentifier("eventDetailsSegue", sender: self)
+        
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 
