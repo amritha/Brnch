@@ -45,7 +45,9 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         //Declare Table
         tableView.delegate = self
         tableView.dataSource = self
-        //tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: self.messages.count - 1, inSection: 0), atScrollPosition: .Bottom, animated: true)
+        //self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: self.messages.count - 1, inSection: 0), atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+
+
         
         //Declare Timer
         timer = NSTimer.scheduledTimerWithTimeInterval(0, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
@@ -54,9 +56,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         var messagesTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "queryTimer", userInfo: nil, repeats: true)
         
         messagesTimer.fire()
-        
-        
-        
+
         
         
         //foursquare venue header image
@@ -112,6 +112,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
             self.messages = results as! [PFObject]
             self.tableView.reloadData()
         }
+        
         
         
         
@@ -277,6 +278,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         var cell = tableView.dequeueReusableCellWithIdentifier("ChatTableViewCell") as! ChatTableViewCell
         
         var message = messages[indexPath.row]
@@ -284,6 +286,17 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         var chatUser = message["user"] as? PFUser
         var name = chatUser?.objectForKey("name") as? String
         cell.userLabel.text = name
+        
+        /*
+        if chatUser == PFUser.currentUser()
+        {
+        //code here
+        }
+        else if {
+        //code here
+        }
+        */
+        
         
         
         return cell
@@ -301,6 +314,9 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
             
             println("Saved the message")
         }
+        
+        DismissKeyboard()
+        textField.text = ""
     }
     
     
@@ -323,6 +339,12 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
             
         }
     }
+    
+    func DismissKeyboard(){
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+
 
     
 }
