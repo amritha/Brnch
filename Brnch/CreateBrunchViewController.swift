@@ -87,6 +87,7 @@ class CreateBrunchViewController: UIViewController {
     
     //Brnch PFObject
     var brnch : PFObject!
+    var thread : PFObject!
     
     //User
     var currentUser : PFUser!
@@ -421,7 +422,7 @@ class CreateBrunchViewController: UIViewController {
         println("done")
         
         //Initialize Brunch event
-        let thread = PFObject(className:"Thread")
+        thread = PFObject(className:"Thread")
         thread.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
@@ -438,6 +439,7 @@ class CreateBrunchViewController: UIViewController {
         if segue.identifier == "eventCreatedSegue" {
             var eventViewController = segue.destinationViewController as! EventViewController
             eventViewController.brnch = brnch
+            eventViewController.thread = thread
             
         }
     }

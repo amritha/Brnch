@@ -38,6 +38,8 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
     var messages : [PFObject]! = []
     var brnch : PFObject!
     
+    var thread : PFObject!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,8 +107,10 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
     func queryTimer()
     {
         var query = PFQuery(className: "Message")
+        //var threadId = thread.objectForKey("objectId")
         // Include the user data with each message
         query.includeKey("user")
+        query.whereKey("thread", equalTo: thread)
         query.findObjectsInBackgroundWithBlock{( results: [AnyObject]?, error: NSError?) -> Void in
             
             self.messages = results as! [PFObject]
@@ -309,6 +313,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         
         message["text"] = textField.text
         message["user"] = PFUser.currentUser()
+        message["thread"] = thread as PFObject
         
         message.saveInBackgroundWithBlock{(success: Bool, error: NSError?) -> Void in
             
