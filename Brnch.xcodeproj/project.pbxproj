@@ -15,6 +15,7 @@
 		5199C0B91B27F5D300BAA7F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5199C0B71B27F5D300BAA7F2 /* LaunchScreen.xib */; };
 		5199C0C51B27F5D300BAA7F2 /* BrnchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5199C0C41B27F5D300BAA7F2 /* BrnchTests.swift */; };
 		51FBFF7F1B39A71A00217BC2 /* RsvpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFF7E1B39A71A00217BC2 /* RsvpViewController.swift */; };
+		51FBFF811B39A92200217BC2 /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFF801B39A92200217BC2 /* InviteViewController.swift */; };
 		5E3DA9871B30AB2600CB1BCB /* AddCrewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3DA9861B30AB2600CB1BCB /* AddCrewViewController.swift */; };
 		5E3DA9891B30AB3200CB1BCB /* AddTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3DA9881B30AB3200CB1BCB /* AddTimeViewController.swift */; };
 		5E8D4A411B2FF2F200A7C573 /* CreateBrunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D4A401B2FF2F200A7C573 /* CreateBrunchViewController.swift */; };
@@ -68,6 +69,7 @@
 		5199C0C31B27F5D300BAA7F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5199C0C41B27F5D300BAA7F2 /* BrnchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrnchTests.swift; sourceTree = "<group>"; };
 		51FBFF7E1B39A71A00217BC2 /* RsvpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RsvpViewController.swift; sourceTree = "<group>"; };
+		51FBFF801B39A92200217BC2 /* InviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
 		5E3DA9861B30AB2600CB1BCB /* AddCrewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrewViewController.swift; sourceTree = "<group>"; };
 		5E3DA9881B30AB3200CB1BCB /* AddTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTimeViewController.swift; sourceTree = "<group>"; };
 		5E8D4A401B2FF2F200A7C573 /* CreateBrunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBrunchViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				EFE3D21E1B326C54006F3E71 /* WelcomeViewController.swift */,
 				511FB8291B377B51000C231E /* ClosedViewController.swift */,
 				51FBFF7E1B39A71A00217BC2 /* RsvpViewController.swift */,
+				51FBFF801B39A92200217BC2 /* InviteViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				EFE3D21F1B326C54006F3E71 /* WelcomeViewController.swift in Sources */,
 				EFE3D1631B2E89A4006F3E71 /* EventViewController.swift in Sources */,
 				EFE3D2391B33D5E3006F3E71 /* AddContactTableViewCell.swift in Sources */,
+				51FBFF811B39A92200217BC2 /* InviteViewController.swift in Sources */,
 				EFE3D1611B2E8411006F3E71 /* Common.swift in Sources */,
 				EFE3D15F1B2E8114006F3E71 /* AddLocationTableViewCell.swift in Sources */,
 				511FB82A1B377B51000C231E /* ClosedViewController.swift in Sources */,
