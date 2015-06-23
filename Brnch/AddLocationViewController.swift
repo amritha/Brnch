@@ -21,6 +21,12 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
     var prevLocation : AddLocationTableViewCell!
     var brnch : PFObject!
 
+    var location: NSDictionary!
+    var address: String!
+    var category: NSArray!
+    var icons: NSArray!
+    var prefix: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,15 +57,15 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
         var title = venue["name"] as! String
         
         //Address declarations
-        var location = venue["location"] as! NSDictionary
-        var address = location.valueForKeyPath("address") as? String
+        location = venue["location"] as! NSDictionary
+        address = location.valueForKeyPath("address") as? String
         
         
         //Category pics declarations
-        var category = venue["categories"] as! NSArray
-        var icons = category.valueForKeyPath("icon") as! NSArray
+        category = venue["categories"] as! NSArray
+        icons = category.valueForKeyPath("icon") as! NSArray
         
-        var prefix = icons[0].valueForKeyPath("prefix") as! String
+        prefix = icons[0].valueForKeyPath("prefix") as! String
         //var suffix = icon.valueForKeyPath("suffix") as! NSArray
         
         //println("\(prefix)")

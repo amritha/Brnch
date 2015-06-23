@@ -40,7 +40,15 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
     
     var thread : PFObject!
     
+    // Variables to pass through to Details page
     var invited : [String]!
+    var location: NSDictionary!
+    var address: String!
+    var category: NSArray!
+    var icons: NSArray!
+    var prefix: String!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +57,8 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         tableView.delegate = self
         tableView.dataSource = self
         //self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: self.messages.count - 1, inSection: 0), atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
-
-
+        
+        
         
         //Declare Timer
         timer = NSTimer.scheduledTimerWithTimeInterval(0, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
@@ -59,7 +67,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         var messagesTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "queryTimer", userInfo: nil, repeats: true)
         
         messagesTimer.fire()
-
+        
         
         
         //foursquare venue header image
@@ -337,12 +345,29 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
     }
     
     
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "eventDetailsSegue" {
+            
+            // Pass Data
             var eventDetailsViewController = segue.destinationViewController as! EventDetailsViewController
+            
             eventDetailsViewController.brnch = brnch
             eventDetailsViewController.invited = invited
+            eventDetailsViewController.invited = invited
+            
+            var fromViewController = segue.sourceViewController as! UIViewController
+            var toViewController = segue.destinationViewController as! UIViewController
+            var identifier = segue.identifier
+            
+            toViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            
+            detailsTransition = DetailsTransition()
+            
+            toViewController.transitioningDelegate = detailsTransition
+            
+            
+            
             
         }
     }
@@ -351,7 +376,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
-
-
+    
+    
     
 }
