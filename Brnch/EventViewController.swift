@@ -105,7 +105,8 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
     func queryTimer()
     {
         var query = PFQuery(className: "Message")
-        
+        // Include the user data with each message
+        query.includeKey("user")
         query.findObjectsInBackgroundWithBlock{( results: [AnyObject]?, error: NSError?) -> Void in
             
             self.messages = results as! [PFObject]
@@ -280,6 +281,9 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         
         var message = messages[indexPath.row]
         cell.messageLabel.text = message["text"] as? String
+        var chatUser = message["user"] as? PFUser
+        var name = chatUser?.objectForKey("name") as? String
+        cell.userLabel.text = name
         
         
         return cell
