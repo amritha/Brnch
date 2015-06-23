@@ -96,6 +96,8 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
         
         // Saves brnch event with selected venue
         brnch["venue"] = prevLocation.locationLabel.text
+        if prevLocation.addressLabel.text != nil{
+            brnch["address"] = prevLocation.addressLabel.text}
         brnch.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
