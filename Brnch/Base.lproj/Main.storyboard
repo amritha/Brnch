@@ -73,39 +73,47 @@
         <!--Event Details View Controller-->
         <scene sceneID="Qwl-Tb-Prb">
             <objects>
-                <viewController id="KjC-Lu-t3Q" customClass="EventDetailsViewController" customModule="Brnch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventDetailsViewController" id="KjC-Lu-t3Q" customClass="EventDetailsViewController" customModule="Brnch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BZn-b4-fbJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Create_BG_04" id="o8n-uk-GYV">
-                                <rect key="frame" x="0.0" y="-200" width="320" height="1704"/>
+                                <rect key="frame" x="0.0" y="-87" width="320" height="1704"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uin-mx-ZiY">
-                                <rect key="frame" x="67" y="390" width="187" height="47"/>
+                                <rect key="frame" x="259" y="21" width="50" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Button_04_EditBrunch">
+                                <state key="normal" image="Button_03_Edit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didPressEditBrunch:" destination="KjC-Lu-t3Q" eventType="touchUpInside" id="nHm-pU-BhA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qGK-Kd-VVf">
-                                <rect key="frame" x="292" y="27" width="12" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lpG-hX-BlW">
+                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="CloseX_01">
+                                <state key="normal" image="Create_DoneButton_01">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="didPressX:" destination="KjC-Lu-t3Q" eventType="touchUpInside" id="kpW-B8-B8V"/>
+                                    <action selector="didPressDone:" destination="KjC-Lu-t3Q" eventType="touchUpInside" id="Jem-eW-PmX"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PVI-BB-pat">
+                                <rect key="frame" x="40" y="101" width="212" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="venueLabel" destination="PVI-BB-pat" id="eSR-eU-oQu"/>
                         <segue destination="I1P-lF-A4P" kind="modal" identifier="editEventSegue" id="tGG-pS-ah4"/>
                     </connections>
                 </viewController>
@@ -899,7 +907,7 @@
                                         <rect key="frame" x="0.0" y="22" width="326" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bzq-Ua-dPZ" id="BHv-rU-nJI">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amritha Prasad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bvz-bO-0sl">
@@ -1072,11 +1080,10 @@
         <image name="Button_01" width="289" height="45"/>
         <image name="Button_02_Invite" width="75" height="25"/>
         <image name="Button_02_Remove" width="75" height="25"/>
+        <image name="Button_03_Edit" width="50" height="23"/>
         <image name="Button_03_View" width="50" height="23"/>
-        <image name="Button_04_EditBrunch" width="93" height="23"/>
         <image name="Button_Check_01_Checked" width="28" height="28"/>
         <image name="Button_Check_01_Empty" width="28" height="28"/>
-        <image name="CloseX_01" width="12" height="11"/>
         <image name="CreateYourBrunch_01" width="320" height="568"/>
         <image name="Create_BG_04" width="320" height="1704"/>
         <image name="Create_Crew_01" width="29" height="8"/>

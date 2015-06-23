@@ -10,9 +10,20 @@ import UIKit
 
 class EventDetailsViewController: UIViewController {
 
+    var brnch : PFObject!
+    
+    @IBOutlet weak var venueLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //Pull Venue Name
+        var venue = brnch.objectForKey("venue") as? String
+        venueLabel.text = venue
+        
+        
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +32,7 @@ class EventDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didPressX(sender: AnyObject) {
+    @IBAction func didPressDone(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
         
     }
@@ -31,6 +42,9 @@ class EventDetailsViewController: UIViewController {
         performSegueWithIdentifier("editEventSegue", sender: self)
         
     }
+    
+    
+    
     /*
     // MARK: - Navigation
 

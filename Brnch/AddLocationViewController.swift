@@ -84,7 +84,7 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
         
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! AddLocationTableViewCell
         
-        //Storing previous location selected in order to unselect it when another is selected
+        // Storing previous location selected in order to unselect it when another is selected
         if(prevLocation != nil){
             self.prevLocation.selected = false
             self.prevLocation.addButton.selected = false
@@ -93,7 +93,8 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
         prevLocation = cell
         prevLocation.selected = true
         prevLocation.addButton.selected = true
-        //Saves brnch event with selected venue
+        
+        // Saves brnch event with selected venue
         brnch["venue"] = prevLocation.locationLabel.text
         brnch.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
