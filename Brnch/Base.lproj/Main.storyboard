@@ -754,7 +754,7 @@ DAY-FUN-DAY YET.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1F6-qg-HOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1388" y="4291"/>
+            <point key="canvasLocation" x="1387" y="4296"/>
         </scene>
         <!--Add Location View Controller-->
         <scene sceneID="6OT-cl-8WM">

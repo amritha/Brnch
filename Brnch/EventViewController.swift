@@ -40,6 +40,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
     
     var thread : PFObject!
     
+    var invited : [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -341,6 +342,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         if segue.identifier == "eventDetailsSegue" {
             var eventDetailsViewController = segue.destinationViewController as! EventDetailsViewController
             eventDetailsViewController.brnch = brnch
+            eventDetailsViewController.invited = invited
             
         }
     }

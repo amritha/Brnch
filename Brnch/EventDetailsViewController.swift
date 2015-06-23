@@ -14,6 +14,8 @@ class EventDetailsViewController: UIViewController {
     
     @IBOutlet weak var venueLabel: UILabel!
     
+    var invited: [String]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

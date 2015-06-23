@@ -94,6 +94,8 @@ class CreateBrunchViewController: UIViewController {
     
     var timer : NSTimer!
     
+    //Invited
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -440,6 +442,7 @@ class CreateBrunchViewController: UIViewController {
             var eventViewController = segue.destinationViewController as! EventViewController
             eventViewController.brnch = brnch
             eventViewController.thread = thread
+            eventViewController.invited = addCrewViewController.invited
             
         }
     }
