@@ -119,7 +119,7 @@ class CreateBrunchViewController: UIViewController {
         
         
         
-        
+
         addCrewViewController = storyboard.instantiateViewControllerWithIdentifier("AddCrewViewController") as! AddCrewViewController
         addLocationViewController = storyboard.instantiateViewControllerWithIdentifier("AddLocationViewController") as! AddLocationViewController
         addTimeViewController = storyboard.instantiateViewControllerWithIdentifier("AddTimeViewController") as! AddTimeViewController
@@ -430,23 +430,16 @@ class CreateBrunchViewController: UIViewController {
                 println("error location")
             }
         }
-        
-        
-        
+                
         performSegueWithIdentifier("eventCreatedSegue", sender: nil)
     }
     
-
-    
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        if segue.identifier == "eventCreatedSegue" {
+            var eventViewController = segue.destinationViewController as! EventViewController
+            eventViewController.brnch = brnch
+            
+        }
     }
-    */
     
 }

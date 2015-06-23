@@ -17,6 +17,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
     @IBOutlet weak var minutesLabel: UILabel!
     @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var venueLabel: UILabel!
     
     var detailsTransition : DetailsTransition!
     var fadeTransition : FadeTransition!
@@ -35,6 +36,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
     
     //Parse Stuff
     var messages : [PFObject]! = []
+    var brnch : PFObject!
     
     
     override func viewDidLoad() {
@@ -44,7 +46,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         tableView.delegate = self
         tableView.dataSource = self
         //tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: self.messages.count - 1, inSection: 0), atScrollPosition: .Bottom, animated: true)
-            
+        
         //Declare Timer
         timer = NSTimer.scheduledTimerWithTimeInterval(0, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
         
@@ -52,7 +54,10 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         var messagesTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "queryTimer", userInfo: nil, repeats: true)
         
         messagesTimer.fire()
-
+        
+        
+        
+        
         
         //foursquare venue header image
         var venueId = "4aff8b4af964a520663922e3"
@@ -76,16 +81,21 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
             self.venueImageView.setImageWithURL(photoUrl)
             
             
-            }
+        }
         
         // Keyboard shown or hidden
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name:
+            UIKeyboardWillHideNotification, object: nil)
+        
+        //Pull Venue Name
+        var venue = brnch.objectForKey("venue") as? String
+        venueLabel.text = venue
         
         
-        }
-
-
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -102,8 +112,10 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
             self.tableView.reloadData()
         }
         
+        
+        
     }
-
+    
     
     func updateCounter(){
         let date = NSDate()
@@ -153,30 +165,30 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         //daysLabel.text = String(daysLeft)
         if hoursLeft > 9
         {
-        hoursLabel.text = String (hoursLeft)
+            hoursLabel.text = String (hoursLeft)
         }
         else if hoursLeft < 10
         {
-        hoursLabel.text = "0" + String(hoursLeft)
+            hoursLabel.text = "0" + String(hoursLeft)
         }
         
         if minutesLeft > 9
         {
-        minutesLabel.text = String(minutesLeft)
+            minutesLabel.text = String(minutesLeft)
         }
         else if minutesLeft < 10
         {
-        minutesLabel.text = "0" + String(minutesLeft)
+            minutesLabel.text = "0" + String(minutesLeft)
         }
         
         if secondsLeft > 9 {
-        secondsLabel.text = String(secondsLeft)
+            secondsLabel.text = String(secondsLeft)
         }
         else if secondsLeft < 10
         {
-        secondsLabel.text = "0" + String(secondsLeft)
+            secondsLabel.text = "0" + String(secondsLeft)
         }
-    
+        
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
@@ -188,7 +200,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         //Declaring image picker
         imagePicker =  UIImagePickerController()
         imagePicker.delegate = self
-
+        
         //Creating action sheet
         let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
         
@@ -220,8 +232,8 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         
         //Present action sheet on click
         self.presentViewController(optionMenu, animated: true, completion: nil)
-    
-       
+        
+        
     }
     
     
@@ -268,12 +280,12 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         
         var message = messages[indexPath.row]
         cell.messageLabel.text = message["text"] as? String
-
+        
         
         return cell
     }
     
-
+    
     @IBAction func didPressSend(sender: AnyObject) {
         
         var message = PFObject(className: "Message")
@@ -286,7 +298,10 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
             println("Saved the message")
         }
     }
-
+    
+    
+    
+    
     
     @IBAction func didPressView(sender: AnyObject) {
         // View Details button
@@ -298,12 +313,12 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
     
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
