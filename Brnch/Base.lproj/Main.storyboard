@@ -123,8 +123,21 @@
                                     <action selector="didPressDone:" destination="KjC-Lu-t3Q" eventType="touchUpInside" id="Jem-eW-PmX"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Create_Crew_02" id="JiQ-iD-2jU">
+                                <rect key="frame" x="42" y="76" width="29" height="8"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Create_Place_02" id="yq4-Px-yya">
+                                <rect key="frame" x="42" y="190" width="32" height="8"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Create_Time_02" id="593-hk-JT7">
+                                <rect key="frame" x="49" y="304" width="25" height="7"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PVI-BB-pat">
-                                <rect key="frame" x="40" y="101" width="212" height="21"/>
+                                <rect key="frame" x="42" y="206" width="212" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1361,10 +1374,13 @@ QVJFIFlPVSBJTiBGT1IgA1NVTkRBWSBCUlVOQ0g/A
         <image name="Create_BG_01" width="320" height="1704"/>
         <image name="Create_BG_04" width="320" height="1704"/>
         <image name="Create_Crew_01" width="29" height="8"/>
+        <image name="Create_Crew_02" width="29" height="8"/>
         <image name="Create_DoneButton_01" width="320" height="60"/>
         <image name="Create_Place_01" width="32" height="8"/>
+        <image name="Create_Place_02" width="32" height="8"/>
         <image name="Create_PlanYourBrunch_01" width="177" height="13"/>
         <image name="Create_Time_01" width="25" height="7"/>
+        <image name="Create_Time_02" width="25" height="7"/>
         <image name="Event Page Copy" width="321" height="569"/>
         <image name="Pick the Spot Copy" width="320" height="568"/>
         <image name="Sections_01_Time" width="319" height="30"/>
@@ -1388,6 +1404,6 @@ QVJFIFlPVSBJTiBGT1IgA1NVTkRBWSBCUlVOQ0g/A
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="gfR-lO-XtA"/>
+        <segue reference="tGG-pS-ah4"/>
     </inferredMetricsTieBreakers>
 </document>
