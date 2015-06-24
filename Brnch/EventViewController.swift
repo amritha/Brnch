@@ -28,8 +28,10 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
     
     var timer = NSTimer()
     
-    
+    //Image Variables
     var imagePicker : UIImagePickerController!
+    var chatImage : UIImage!
+    let counter = 1
     
     //TableView Stuff
     @IBOutlet weak var tableView: UITableView!
@@ -210,7 +212,27 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        
+        chatImage = image
+        
+        var message = PFObject(className: "Message")
+        
+        message["user"] = PFUser.currentUser()
+        message["thread"] = thread as PFObject
+        
+        message.saveInBackgroundWithBlock{(success: Bool, error: NSError?) -> Void in
+            //create image data
+            var imageData = UIImagePNGRepresentation(image)
+            var parseImageFile = PFFile(name: "uploaded_image_\(self.counter)", data: imageData)
+            message["imageFile"] = parseImageFile
+            message.saveInBackground()
+            
+            //create parse file to store in cloud
+            println("Saved the message")
+            //self.counter++
+        }
+
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -295,31 +317,46 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        var cell = tableView.dequeueReusableCellWithIdentifier("ChatTableViewCell") as! ChatTableViewCell
-        
         var message = messages[indexPath.row]
-        cell.messageLabel.text = message["text"] as? String
-        var chatUser = message["user"] as? PFUser
-        var name = chatUser?.objectForKey("name") as? String
-        cell.userLabel.text = name
         
-        cell.chatMsgView.layer.cornerRadius = 13
-        cell.upperLeftCornerView.layer.cornerRadius = 3
+        //If there is no data for image file, make it a chatTableViewCell
+        if message["imageFile"] == nil{
+            var cell = tableView.dequeueReusableCellWithIdentifier("ChatTableViewCell") as! ChatTableViewCell
+            cell.messageLabel.text = message["text"] as? String
+            var chatUser = message["user"] as? PFUser
+            var name = chatUser?.objectForKey("name") as? String
+            cell.userLabel.text = name
+            return cell
+        }
         
-        /*
-        if chatUser == PFUser.currentUser()
+        //If an image was uploaded, make it a photoChatTableViewCell
+        else
         {
-        //code here
+            var photoCell = tableView.dequeueReusableCellWithIdentifier("PhotoChatTableViewCell") as! PhotoChatTableViewCell
+            //cell.messageLabel.text = message["text"] as? String
+            
+            //Get ImageFile
+            let userImageFile = message["imageFile"] as! PFFile
+            
+            //Get image file data and pass it to photocell imageView
+            userImageFile.getDataInBackgroundWithBlock{
+                (imageData: NSData?, error: NSError?) -> Void in
+                
+                if error == nil{
+                    if let imageData = imageData{
+                        let image = UIImage(data:imageData)
+                        photoCell.photoImageView!.image = image
+                    }
+                }
+            }
+            
+            
+            var chatUser = message["user"] as? PFUser
+            var name = chatUser?.objectForKey("name") as? String
+            photoCell.userLabel.text = name
+            return photoCell
         }
-        else if {
-        //code here
-        }
-        */
-        
-        
-        
-        return cell
+
     }
     
     
