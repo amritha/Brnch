@@ -398,9 +398,6 @@ DAY-FUN-DAY YET.</string>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hgg-kp-l7a">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CreateYourBrunch_01" translatesAutoresizingMaskIntoConstraints="NO" id="Xap-XH-DLw">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRY-RT-en4">
                                         <rect key="frame" x="16" y="444" width="289" height="45"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="17"/>
@@ -412,6 +409,9 @@ DAY-FUN-DAY YET.</string>
                                             <segue destination="I1P-lF-A4P" kind="modal" id="gfR-lO-XtA"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CreateYourBrunch_01" translatesAutoresizingMaskIntoConstraints="NO" id="Xap-XH-DLw">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.80392156862745101" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -539,11 +539,11 @@ DAY-FUN-DAY YET.</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Create_DoneButton_01" translatesAutoresizingMaskIntoConstraints="NO" id="vMI-2A-4oO">
-                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="568" width="320" height="60"/>
                             </imageView>
                             <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1R3-vq-P3N" userLabel="Done Button">
-                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
-                                <state key="normal">
+                                <rect key="frame" x="0.0" y="569" width="320" height="60"/>
+                                <state key="normal" backgroundImage="Create_DoneButton_01">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -834,7 +834,7 @@ DAY-FUN-DAY YET.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
                                 <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="50" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uHg-j4-hqE">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="50" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uHg-j4-hqE">
                                 <rect key="frame" x="0.0" y="159" width="326" height="409"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1231,7 +1231,7 @@ DAY-FUN-DAY YET.</string>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CNj-rw-KOq" id="wae-Sl-2pJ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q88-ie-58S" userLabel="contact pic">
+                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q88-ie-58S" userLabel="contact pic">
                                                     <rect key="frame" x="11" y="16" width="42" height="42"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXr-St-e3H">
@@ -1544,6 +1544,6 @@ QVJFIFlPVSBJTiBGT1IgA1NVTkRBWSBCUlVOQ0g/A
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="tGG-pS-ah4"/>
+        <segue reference="gfR-lO-XtA"/>
     </inferredMetricsTieBreakers>
 </document>

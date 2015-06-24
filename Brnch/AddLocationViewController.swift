@@ -160,6 +160,7 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
                 println("error location")
             }
         }
+        view.endEditing(true)
 
 
     }
@@ -206,9 +207,11 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
     
     //Clicking in reveals favorite places
     @IBAction func onSearchBegan(sender: AnyObject) {
+        if favVenues.count == 0 {
         if searchField.text == ""{
             query = searchField.text
             self.searchWithName(self.query)
+        }
         }
     }
     

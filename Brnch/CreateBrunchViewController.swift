@@ -83,7 +83,7 @@ class CreateBrunchViewController: UIViewController {
     
     // Keeping track of whether we can be done or not
     // If its true, show the done button
-    var doneButtonShown: Bool!
+    //var doneButtonShown: Bool!
     
     //Brnch PFObject
     var brnch : PFObject!
@@ -99,6 +99,9 @@ class CreateBrunchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /* Move Done Button out of frame and clip to bounds
+        doneButton.frame = CGRect(x: 0, y: 570, width: 320, height: 60)
+        self.doneButtonImage.frame = self.doneButton.frame*/
         
         //Timer
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("doneButtonAppear"), userInfo: nil, repeats: true)
@@ -157,9 +160,7 @@ class CreateBrunchViewController: UIViewController {
         
         currentStep = .Crew
         
-        // Move Done Button out of frame and clip to bounds
-        doneButton.frame = CGRect(x: 0, y: 570, width: 320, height: 60)
-        self.doneButtonImage.frame = self.doneButton.frame
+        
 
         
         // Do any additional setup after loading the view.
@@ -225,10 +226,12 @@ class CreateBrunchViewController: UIViewController {
     func stepOneCrew() {
         // Step 1: Add your Crew
         println("Crew")
+        
         DismissKeyboard()
         
         if currentStep == .Crew {
             println("Don't Move")
+
             
         } else {
             println("Moved")
@@ -374,16 +377,24 @@ class CreateBrunchViewController: UIViewController {
     }
     
     func doneButtonAppear(){
-        if brnch["venue"] != nil && brnch["meet_time"] != nil
+        if brnch["venue"] != nil && brnch["meet_time"] != nil && brnch["meet_day"] != nil
         {
             UIView.animateWithDuration(0.4, animations: {
                 self.doneButton.frame = CGRect(x: 0, y: 509, width: 320, height: 60)
                 self.doneButtonImage.frame = self.doneButton.frame
             })
-            timer.invalidate()
-            doneButtonShown = true
-        } else {
-            doneButtonShown = false
+            //timer.invalidate()
+            //doneButtonShown = true
+        }
+        
+        else {
+            //doneButtonShown = false
+            UIView.animateWithDuration(0.4, animations: {
+            println("oh hey")
+                self.doneButton.frame = CGRect(x: 0, y: 570, width: 320, height: 60)
+                self.doneButtonImage.frame = self.doneButton.frame
+            })
+
         }
         
     }
@@ -399,26 +410,26 @@ class CreateBrunchViewController: UIViewController {
     
     func moveDoneButtonDown() {
         println("move done button down")
-        UIView.animateWithDuration(0.4, animations: {
+        /*UIView.animateWithDuration(0.4, animations: {
             self.doneButton.frame = CGRect(x: 0, y: 509, width: 320, height: 60)
             self.doneButtonImage.frame = self.doneButton.frame
-        })
+        })*/
         
     }
     
     func keyboardWillShow(notification: NSNotification!) {
         println("keyboard will show")
-        if doneButtonShown == true {
+        //if doneButtonShown == true {
             moveDoneButtonUp()
-        }
+        //}
     }
     
     func keyboardWillHide(notification: NSNotification!) {
         println("keyboard will hide")
-        if doneButtonShown == true {
+        //if doneButtonShown == true {
             moveDoneButtonDown()
             
-        }
+        //}
     }
     
     @IBAction func didPressDoneButton(sender: AnyObject) {
