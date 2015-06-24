@@ -37,7 +37,8 @@ class WelcomeViewController: UIViewController {
                 
             }
         })
-        logInButton.center = self.view.center
+        logInButton.center.y = 528
+        logInButton.center.x = self.view.center.x
         self.view.addSubview(logInButton)
 
     }
