@@ -14,8 +14,8 @@ import UIKit
 class AddCrewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    var invited = ["Amritha Prasad", "Joshua Bisch", "Salih Abdul-Karim"]
-    var contactsList = ["John Badalamenti", "Deepa Prasad", "Emily Weslosky", "Aziz Ansari", "Katrina Kaif", "Beyonce Knowles"]
+    var invited : [String]! = []
+    var contactsList: [String]!  = ["Joshua Bisch", "Salih Abdul-Karim", "John Badalamenti", "Deepa Prasad", "Emily Weslosky", "Aziz Ansari", "Katrina Kaif", "Beyonce Knowles"]
     
     var sections = ["Invited", "Contacts"]
     
@@ -118,6 +118,8 @@ class AddCrewViewController: UIViewController, UITableViewDelegate, UITableViewD
             contactsList.append(invited[indexPath.row])
             invited.removeAtIndex(indexPath.row)
             cell.addButton.selected = false
+            
+            
         } else {
             newIndexPath = NSIndexPath(forRow: invited.count, inSection: 0)
             invited.append(contactsList[indexPath.row])
