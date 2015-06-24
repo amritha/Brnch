@@ -225,7 +225,7 @@ class CreateBrunchViewController: UIViewController {
     func stepOneCrew() {
         // Step 1: Add your Crew
         println("Crew")
-        
+        DismissKeyboard()
         
         if currentStep == .Crew {
             println("Don't Move")
@@ -263,7 +263,7 @@ class CreateBrunchViewController: UIViewController {
         // Step 2: Change your Location
         self.addLocationViewController.brnch = brnch
         println("Location")
-        
+        self.addLocationViewController.searchField.becomeFirstResponder()
         
         if currentStep == .Location {
             println("Don't Move")

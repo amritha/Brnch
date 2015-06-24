@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class AddLocationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class AddLocationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
+    
 
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -27,14 +30,39 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
     var icons: NSArray!
     var prefix: String!
     
+    let locationManager = CLLocationManager()
+    var locationLat : Double!
+    var locationLong : Double!
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
-        
         //searchField.becomeFirstResponder()
-        //searchWithName("")
+        //self.searchWithName("brunch")
+        
+        //Get User's permission for location
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        //After user authorizes
+        if CLLocationManager.locationServicesEnabled()
+        {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+            locationLat = locationManager.location.coordinate.latitude
+            locationLong = locationManager.location.coordinate.longitude
+            
+            println("latitude: \(locationLat)")
+            println("longitude: \(locationLong)")
+
+        }
+        
+
 
         // Do any additional setup after loading the view.
     }
@@ -44,6 +72,17 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
         // Dispose of any resources that can be recreated.
     }
     
+
+    func displayLocationInfo(placemark: CLPlacemark){
+        self.locationManager.stopUpdatingLocation()
+        println(placemark.locality)
+        println(placemark.postalCode)
+        println(placemark.administrativeArea)
+        println(placemark.country)
+        println(placemark.location.coordinate.latitude)
+        println(placemark.location.coordinate.longitude)
+        
+    }
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -128,7 +167,8 @@ class AddLocationViewController: UIViewController, UITableViewDataSource, UITabl
     func searchWithName(name: String){
         
         
-        if let url = NSURL(string: "https://api.foursquare.com/v2/venues/search?client_id=\(self.clientId)&client_secret=\(self.clientSecret)&v=20130815%20&ll=40.7,-74%20&query=\(name)&near=San%20Francisco%2C%20CA") {
+        //if let url = NSURL(string: "https://api.foursquare.com/v2/venues/search?client_id=\(self.clientId)&client_secret=\(self.clientSecret)&v=20130815%20&ll=40.7,-74%20&query=\(name)&near=San%20Francisco%2C%20CA") {
+        if let url = NSURL(string: "https://api.foursquare.com/v2/venues/search?client_id=\(self.clientId)&client_secret=\(self.clientSecret)&v=20130815%20&ll=40.7,-74%20&query=\(name)&ll=\(locationLat),\(locationLong)") {
             
             var request = NSURLRequest(URL: url)
             NSURLConnection.cancelPreviousPerformRequestsWithTarget(self)
