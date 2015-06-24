@@ -33,6 +33,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //FBProfilePictureView.self
         Fabric.with([Twitter()])
         
+        if PFUser.currentUser() != nil{
+            var storyboard = UIStoryboard(name: "Main", bundle: nil)
+            var vc = storyboard.instantiateViewControllerWithIdentifier("GetStartedViewController") as! UIViewController
+            window?.rootViewController = vc
+        }
+            else {
+                var storyboard = UIStoryboard(name: "Main", bundle: nil)
+                var vc = storyboard.instantiateViewControllerWithIdentifier("WelcomeViewController") as! UIViewController
+            window?.rootViewController = vc
+            }
+                        
+
+        
         //Get current day of the week
         let calendar:NSCalendar = NSCalendar.currentCalendar()
         let dateComps:NSDateComponents = calendar.components(.CalendarUnitWeekday , fromDate: NSDate())
