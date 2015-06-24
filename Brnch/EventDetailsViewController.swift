@@ -38,14 +38,14 @@ class EventDetailsViewController: UIViewController {
         venueLabel.text = brnch.objectForKey("venue") as? String
         addressLabel.text = brnch.objectForKey("address") as? String
         
-        var brunchDay = brnch.objectForKey("meet_day") as? String
+        var brunchDay = brnch.objectForKey("meet_day") as! String
         var brunchTime = brnch.objectForKey("meet_time") as! Int
         
-        if brunchDay != nil {
+        //if brunchDay != nil {
             timeLabel.text = " \(brunchDay) @ \(brunchTime)ish"
-        } else {
+        /*} else {
             timeLabel.text = "@ \(brunchTime)ish"
-        }
+        }*/
         
         var profileCount : CGFloat = 0
         var profileOffset : CGFloat = 1
