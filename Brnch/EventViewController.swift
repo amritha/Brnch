@@ -53,9 +53,13 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         //Declare Table
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 80
         //self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: self.messages.count - 1, inSection: 0), atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
         
         
@@ -300,6 +304,9 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         var name = chatUser?.objectForKey("name") as? String
         cell.userLabel.text = name
         
+        cell.chatMsgView.layer.cornerRadius = 13
+        cell.upperLeftCornerView.layer.cornerRadius = 3
+        
         /*
         if chatUser == PFUser.currentUser()
         {
@@ -376,6 +383,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+
     
     
     

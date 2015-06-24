@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CC8F0DC1B3A83AB00985005 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CC8F0DB1B3A83AB00985005 /* Images.xcassets */; };
 		0E4698EBA3AC1FB71E3E7A74 /* libPods-Brnch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4202122C47EB9643B76553 /* libPods-Brnch.a */; };
 		511FB82A1B377B51000C231E /* ClosedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FB8291B377B51000C231E /* ClosedViewController.swift */; };
 		5199C0AF1B27F5D300BAA7F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5199C0AE1B27F5D300BAA7F2 /* AppDelegate.swift */; };
 		5199C0B41B27F5D300BAA7F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5199C0B21B27F5D300BAA7F2 /* Main.storyboard */; };
-		5199C0B61B27F5D300BAA7F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5199C0B51B27F5D300BAA7F2 /* Images.xcassets */; };
-		5199C0B91B27F5D300BAA7F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5199C0B71B27F5D300BAA7F2 /* LaunchScreen.xib */; };
 		5199C0C51B27F5D300BAA7F2 /* BrnchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5199C0C41B27F5D300BAA7F2 /* BrnchTests.swift */; };
 		51FBFF7F1B39A71A00217BC2 /* RsvpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFF7E1B39A71A00217BC2 /* RsvpViewController.swift */; };
 		51FBFF811B39A92200217BC2 /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBFF801B39A92200217BC2 /* InviteViewController.swift */; };
@@ -58,13 +57,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CC8F0DB1B3A83AB00985005 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		511FB8291B377B51000C231E /* ClosedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosedViewController.swift; sourceTree = "<group>"; };
 		5199C0A91B27F5D300BAA7F2 /* Brnch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brnch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5199C0AD1B27F5D300BAA7F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5199C0AE1B27F5D300BAA7F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5199C0B31B27F5D300BAA7F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5199C0B51B27F5D300BAA7F2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5199C0B81B27F5D300BAA7F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5199C0BE1B27F5D300BAA7F2 /* BrnchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrnchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5199C0C31B27F5D300BAA7F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5199C0C41B27F5D300BAA7F2 /* BrnchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrnchTests.swift; sourceTree = "<group>"; };
@@ -184,13 +182,12 @@
 				EFE3D15D1B2E80E5006F3E71 /* Table View Cells */,
 				EFE3D15A1B2E7E03006F3E71 /* View Controllers */,
 				5199C0AE1B27F5D300BAA7F2 /* AppDelegate.swift */,
+				0CC8F0DB1B3A83AB00985005 /* Images.xcassets */,
 				5EC37CA51B35EE2A00F6C4B3 /* Fonts */,
 				5199C0B21B27F5D300BAA7F2 /* Main.storyboard */,
 				EFE3D1651B2EA0A8006F3E71 /* dummy.m */,
 				5E8D926B1B3844EC00ADF1EA /* Transition */,
 				EFE3D1601B2E8411006F3E71 /* Common.swift */,
-				5199C0B51B27F5D300BAA7F2 /* Images.xcassets */,
-				5199C0B71B27F5D300BAA7F2 /* LaunchScreen.xib */,
 				5199C0AC1B27F5D300BAA7F2 /* Supporting Files */,
 				EFE3D1641B2EA0A8006F3E71 /* Brnch-Bridging-Header.h */,
 			);
@@ -370,14 +367,13 @@
 				5EC37CB91B35EE3D00F6C4B3 /* OpenSans-Semibold.ttf in Resources */,
 				5EC37CBA1B35EE3D00F6C4B3 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				5199C0B41B27F5D300BAA7F2 /* Main.storyboard in Resources */,
+				0CC8F0DC1B3A83AB00985005 /* Images.xcassets in Resources */,
 				5EC37CB81B35EE3D00F6C4B3 /* OpenSans-Regular.ttf in Resources */,
 				5EC37CB51B35EE3D00F6C4B3 /* OpenSans-Italic.ttf in Resources */,
 				5EC37CB41B35EE3D00F6C4B3 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
-				5199C0B91B27F5D300BAA7F2 /* LaunchScreen.xib in Resources */,
 				5EC37CB71B35EE3D00F6C4B3 /* OpenSans-LightItalic.ttf in Resources */,
 				EF9ECCEF1B367CF4009A2136 /* TwitterKitResources.bundle in Resources */,
 				5EC37CB11B35EE3D00F6C4B3 /* OpenSans-Bold.ttf in Resources */,
-				5199C0B61B27F5D300BAA7F2 /* Images.xcassets in Resources */,
 				5EC37CB61B35EE3D00F6C4B3 /* OpenSans-Light.ttf in Resources */,
 				5EC37CB21B35EE3D00F6C4B3 /* OpenSans-BoldItalic.ttf in Resources */,
 				5EC37CB31B35EE3D00F6C4B3 /* OpenSans-ExtraBold.ttf in Resources */,
@@ -493,14 +489,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		5199C0B71B27F5D300BAA7F2 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5199C0B81B27F5D300BAA7F2 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -590,6 +578,7 @@
 			baseConfigurationReference = C218846EC7C9FF215840105D /* Pods-Brnch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -610,6 +599,7 @@
 			baseConfigurationReference = EF83CBE2223BA4E09F8E5666 /* Pods-Brnch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

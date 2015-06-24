@@ -45,3 +45,12 @@ func transitionValue(scrollOffset: Float, xOffset: Float, yOffset: Float, scales
     tileView.transform = CGAffineTransformScale(tileView.transform, CGFloat(scale), CGFloat(scale))
     tileView.transform = CGAffineTransformRotate(tileView.transform, CGFloat(Double(rotation) * M_PI / 180))
 }
+
+extension UIView {
+    func roundCorners(corners:UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.CGPath
+        self.layer.mask = mask
+    }
+}
