@@ -359,7 +359,8 @@ class CreateBrunchViewController: UIViewController {
     @IBAction func didTapAddLcation(sender: AnyObject) {
         println("Back to Step 2")
         stepTwoLocation()
-        self.DismissKeyboard()
+        //self.DismissKeyboard()
+        addLocationViewController.searchField.becomeFirstResponder()
     }
     
     @IBAction func didTapAddTime(sender: AnyObject) {

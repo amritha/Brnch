@@ -817,6 +817,7 @@ DAY-FUN-DAY YET.</string>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
+                                            <action selector="onSearchBegan:" destination="B27-8N-Bem" eventType="editingDidBegin" id="3bs-bw-Lxt"/>
                                             <action selector="onSearchChanged:" destination="B27-8N-Bem" eventType="editingChanged" id="Rrb-gL-9Ee"/>
                                         </connections>
                                     </textField>
