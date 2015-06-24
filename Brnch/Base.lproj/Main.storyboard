@@ -29,8 +29,12 @@
             <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
         </mutableArray>
         <mutableArray key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
             <string>OpenSans-Semibold</string>
             <string>OpenSans-Semibold</string>
             <string>OpenSans-Semibold</string>
@@ -137,43 +141,57 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Create_Time_02" id="593-hk-JT7">
-                                <rect key="frame" x="49" y="304" width="25" height="7"/>
+                                <rect key="frame" x="42" y="304" width="25" height="7"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PVI-BB-pat">
                                 <rect key="frame" x="49" y="206" width="212" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vBy-0K-qA9">
                                 <rect key="frame" x="49" y="230" width="212" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="emH-AI-wjq">
                                 <rect key="frame" x="49" y="314" width="212" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gTM-bT-Kgz">
-                                <rect key="frame" x="49" y="99" width="42" height="21"/>
+                            <view alpha="0.0" contentMode="scaleToFill" id="IEl-tx-FSZ" userLabel="Temp Profile View">
+                                <rect key="frame" x="49" y="92" width="42" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gTM-bT-Kgz" userLabel="Temp Profile Label">
+                                        <rect key="frame" x="0.0" y="10" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="contact_img_yellow_mask" id="rfV-dp-ngz" userLabel="Temp contact_img_yellow_mask">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="vBy-0K-qA9" id="TBS-6w-6xB"/>
                         <outlet property="crewLabel" destination="gTM-bT-Kgz" id="Wzh-MK-Z2D"/>
+                        <outlet property="tempProfileCircle" destination="rfV-dp-ngz" id="456-V7-mLl"/>
+                        <outlet property="tempProfileLabel" destination="gTM-bT-Kgz" id="6AZ-ip-9b5"/>
+                        <outlet property="tempProfileView" destination="IEl-tx-FSZ" id="KYh-vA-Q0k"/>
                         <outlet property="timeLabel" destination="emH-AI-wjq" id="xXL-vx-1oM"/>
                         <outlet property="venueLabel" destination="PVI-BB-pat" id="eSR-eU-oQu"/>
                         <segue destination="I1P-lF-A4P" kind="modal" identifier="editEventSegue" id="tGG-pS-ah4"/>
@@ -1420,6 +1438,7 @@ QVJFIFlPVSBJTiBGT1IgA1NVTkRBWSBCUlVOQ0g/A
         <image name="Times_01_Sunday" width="320" height="60"/>
         <image name="camera_icon" width="64" height="52"/>
         <image name="contact_img_mask" width="42" height="42"/>
+        <image name="contact_img_yellow_mask" width="42" height="42"/>
         <image name="egg_white" width="157" height="202"/>
         <image name="egg_yolk" width="157" height="197"/>
         <image name="green_invite_btn" width="155" height="40"/>

@@ -17,6 +17,11 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var crewLabel: UILabel!
     
+    
+    @IBOutlet weak var tempProfileView: UIView!
+    @IBOutlet weak var tempProfileLabel: UILabel!
+    @IBOutlet weak var tempProfileCircle: UIImageView!
+    
     var invited: [String]!
     
     var location: NSDictionary!
@@ -33,27 +38,73 @@ class EventDetailsViewController: UIViewController {
         venueLabel.text = brnch.objectForKey("venue") as? String
         addressLabel.text = brnch.objectForKey("address") as? String
         
-        var brunchDay = brnch.objectForKey("meet_day") as! String
+        var brunchDay = brnch.objectForKey("meet_day") as? String
         var brunchTime = brnch.objectForKey("meet_time") as! Int
         
-        timeLabel.text = " \(brunchDay) @ \(brunchTime)ish"
+        if brunchDay != nil {
+            timeLabel.text = " \(brunchDay) @ \(brunchTime)ish"
+        } else {
+            timeLabel.text = "@ \(brunchTime)ish"
+        }
         
-        var profileCount = 1
+        var profileCount : CGFloat = 0
+        var profileOffset : CGFloat = 1
+        var numberOfInvited = invited.count
+        
+        
         for item in invited {
-            println(item)
-            var label = UILabel(frame: CGRectMake(0, 0, 50, 50))
-            label.center = CGPointMake(CGFloat(50 * profileCount), 100)
-            label.textAlignment = NSTextAlignment.Center
-            label.text = String(item[item.startIndex])
-            self.view.addSubview(label)
-            profileCount++
-
+            
+            if profileCount < 5 {
+                println(item)
+                println(profileCount)
+                var newView = UIView(frame: CGRectMake(tempProfileView.frame.origin.x, tempProfileView.frame.origin.y, tempProfileView.frame.width, tempProfileView.frame.height))
+                newView.center = CGPoint(x: tempProfileView.center.x + (tempProfileView.frame.width * profileCount), y: tempProfileView.center.y)
+                newView.backgroundColor = tempProfileView.backgroundColor
+                self.view.addSubview(newView)
+                
+                var tempLabel = UILabel(frame: CGRectMake(tempProfileLabel.frame.origin.x, tempProfileLabel.frame.origin.y, tempProfileLabel.frame.width, tempProfileLabel.frame.height))
+                tempLabel.center = tempProfileLabel.center
+                tempLabel.textAlignment = NSTextAlignment.Center
+                tempLabel.text = String(item[item.startIndex])
+                tempLabel.font = tempProfileLabel.font
+                tempLabel.textColor = tempProfileLabel.textColor
+                newView.addSubview(tempLabel)
+                
+                var tempCircle = UIImageView(frame: CGRectMake(tempProfileCircle.frame.origin.x, tempProfileCircle.frame.origin.y, tempProfileCircle.frame.width, tempProfileCircle.frame.height))
+                tempCircle.image = UIImage(named: "contact_img_yellow_mask")
+                tempCircle.center = tempProfileCircle.center
+                newView.addSubview(tempCircle)
+                
+                profileCount++
+                
+            } else if profileCount >= 5 {
+                
+                println(item)
+                println(profileCount)
+                var newView = UIView(frame: CGRectMake(tempProfileView.frame.origin.x, tempProfileView.frame.origin.y, tempProfileView.frame.width, tempProfileView.frame.height))
+                newView.center = CGPoint(x: tempProfileView.center.x + (tempProfileView.frame.width * profileCount), y: tempProfileView.center.y)
+                newView.backgroundColor = tempProfileView.backgroundColor
+                self.view.addSubview(newView)
+                
+                var tempLabel = UILabel(frame: CGRectMake((tempProfileLabel.frame.origin.x * profileCount), tempProfileLabel.frame.origin.y, tempProfileLabel.frame.width, tempProfileLabel.frame.height))
+                tempLabel.center = tempProfileLabel.center
+                tempLabel.textAlignment = NSTextAlignment.Center
+                var leftOverInvited = CGFloat(invited.count) - profileCount
+                tempLabel.text = "+\(Int(leftOverInvited))"
+                tempLabel.font = tempProfileLabel.font
+                tempLabel.textColor = tempProfileLabel.textColor
+                newView.addSubview(tempLabel)
+                
+                var tempCircle = UIImageView(frame: CGRectMake(tempProfileCircle.frame.origin.x, tempProfileCircle.frame.origin.y, tempProfileCircle.frame.width, tempProfileCircle.frame.height))
+                tempCircle.image = UIImage(named: "contact_img_yellow_mask")
+                tempCircle.center = tempProfileCircle.center
+                newView.addSubview(tempCircle)
+                
+            }
+            
         }
         
         
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
