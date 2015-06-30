@@ -98,6 +98,7 @@ class CreateBrunchViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         /* Move Done Button out of frame and clip to bounds
         doneButton.frame = CGRect(x: 0, y: 570, width: 320, height: 60)

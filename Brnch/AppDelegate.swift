@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //FBLoginView.self
         //FBProfilePictureView.self
         Fabric.with([Twitter()])
-        
+        PFUser.logOut()
         if PFUser.currentUser() != nil{
             var storyboard = UIStoryboard(name: "Main", bundle: nil)
             var vc = storyboard.instantiateViewControllerWithIdentifier("GetStartedViewController") as! UIViewController

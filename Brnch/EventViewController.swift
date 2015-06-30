@@ -54,7 +54,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.chatView.frame = CGRect(x: 0, y: 20, width: 320, height: 50)
         
         
         //Declare Table
@@ -160,10 +160,10 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         
         let brunchDate = NSDateComponents()
         brunchDate.year = 2015
-        brunchDate.month = 6
-        brunchDate.day = 26
+        brunchDate.month = 07
+        brunchDate.day = 04
         brunchDate.hour = 11
-        brunchDate.minute = 30
+        brunchDate.minute = 00
         brunchDate.second = 00
         let brunchDay = userCalendar.dateFromComponents(brunchDate)!
         
@@ -281,20 +281,20 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
     //Move Chat Window Up on Keyboard Appear
     func moveChatUp(){
         println("move chat up")
-        UIView.animateWithDuration(0.4, animations: {
-            self.chatView.frame = CGRect(x: 0, y: 240, width: 320, height: 50)
+        //UIView.animateWithDuration(0.4, animations: {
+            self.chatView.frame = CGRect(x: 0, y: 20, width: 320, height: 50)
             //self.doneButtonImage.frame = self.doneButton.frame
-        })
+        //})
         
     }
     
     //Move Chat Window Down on Keyboard Disappear
     func moveChatDown() {
         println("move chat down")
-        UIView.animateWithDuration(0.4, animations: {
+        //UIView.animateWithDuration(0.4, animations: {
             self.chatView.frame = CGRect(x: 0, y: 509, width: 320, height: 60)
             //self.doneButtonImage.frame = self.doneButton.frame
-        })
+        //})
         
     }
     
@@ -326,7 +326,10 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
             var chatUser = message["user"] as? PFUser
             var name = chatUser?.objectForKey("name") as? String
             cell.userLabel.text = name
+            cell.chatMsgView.layer.cornerRadius = 13
+            cell.upperLeftCornerView.layer.cornerRadius = 3
             return cell
+            
         }
         
         //If an image was uploaded, make it a photoChatTableViewCell
@@ -387,6 +390,8 @@ class EventViewController: UIViewController, UINavigationControllerDelegate, UII
         
         
     }
+    
+    
     
     
     
